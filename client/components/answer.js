@@ -30,6 +30,8 @@ class Answer extends Component {
                 }
             },
 
+            pieceDisplayed: {}
+
         }
     }
 
@@ -38,9 +40,28 @@ class Answer extends Component {
         // This may be passed from a currently tested component
     }
 
+    renderPiece(option) {
+        let { parts, name } = this.props.piece, name;
+        return (
+            <div>
+                <h4>{name}</h4>
+                {parts.map(part => (
+                    <div>
+                        <p><strong>{part.name}</strong></p>
+                        {part.lines.map(line => (
+                            <p>{option(line.sentence)}</p>
+                        ))}
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
     render() {
         return (
-            <div></div>
+            <div>
+                {this.renderPiece()}
+            </div>
         )
     }
 }
