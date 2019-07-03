@@ -3,8 +3,21 @@
 const db = require('../server/db')
 const {User} = require('../server/db/models')
 
-const midyearproc2019 = [
-  {
+const midyearproc2019 = {
+  name: 'Mid-Year Processional 2019',
+  sequence: [
+    'stanza1',
+    'stanza2',
+    'refrain',
+    'stanza3',
+    'stanza4',
+    'refrain',
+    'stanza5',
+    'stanza6',
+    'refrain',
+    'coda'
+  ],
+  piece: {
     stanza1: [
       'Great indeed is Your unfailing love',
       'For us, O Lord God',
@@ -61,13 +74,13 @@ const midyearproc2019 = [
       'So that we will all be led',
       'To achieve perfect faith in Your sight'
     ],
-    code: [
+    coda: [
       'We will not separate from the right',
       'To worship You, which You bestowed on us',
       'Amen'
     ]
   }
-]
+}
 
 async function seed() {
   await db.sync({force: true})
