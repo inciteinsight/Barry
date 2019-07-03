@@ -1,67 +1,63 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 
 class Answer extends Component {
-    constructor() {
-        this.state = {
+  constructor() {
+    super()
+    this.state = {
+      revealMode: 'Complete',
 
-            revealMode: 'Complete',
+      options: [
+        'Complete',
+        'Blind',
+        'First Letter',
+        'First Ten Letters',
+        'Last Ten Letters',
+        'First Letter of each Word'
+      ],
 
-            options: [
-                'Complete',
-                'Blind',
-                'First Letter',
-                'First Ten Letters',
-                'Last Ten Letters',
-                'First Letter of each Word'
-            ],
-
-            hintParameters: {
-                entire: {
-                    enable: true
-                },
-                firstLetter: {
-                    enable: true
-                },
-                firstHalf: {
-                    enable: true
-                },
-                secondHalf: {
-                    enable: true
-                }
-            },
-
-            pieceDisplayed: {}
-
+      hintParameters: {
+        entire: {
+          enable: true
+        },
+        firstLetter: {
+          enable: true
+        },
+        firstHalf: {
+          enable: true
+        },
+        secondHalf: {
+          enable: true
         }
-    }
+      },
 
-    componentDidMount() {
-        // must mount piece being tested
-        // This may be passed from a currently tested component
+      pieceDisplayed: {}
     }
+  }
 
-    renderPiece(option) {
-        let { parts, name } = this.props.piece, name;
-        return (
-            <div>
-                <h4>{name}</h4>
-                {parts.map(part => (
-                    <div>
-                        <p><strong>{part.name}</strong></p>
-                        {part.lines.map(line => (
-                            <p>{option(line.sentence)}</p>
-                        ))}
-                    </div>
-                ))}
-            </div>
-        )
-    }
+  componentDidMount() {
+    // must mount piece being tested
+    // This may be passed from a currently tested component
+  }
 
-    render() {
-        return (
-            <div>
-                {this.renderPiece()}
-            </div>
-        )
-    }
+  renderPiece(option) {
+    let {piece} = this.props
+    let {parts} = this.props.piece
+    return (
+      <div>
+        <h4>{piece.name}</h4>
+        {parts.map(part => (
+          <div>
+            <p>
+              <strong>{part.name}</strong>
+            </p>
+            {part.lines.map(line => <p>{option(line.sentence)}</p>)}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  render() {
+    return <div>{this.renderPiece()}</div>
+  }
 }

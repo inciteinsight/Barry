@@ -1,10 +1,11 @@
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
+const db = require('../db')
 
 const Part = db.define('part', {
-    name: {
-        type: Sequelize.STRING
-    }
-});
+  name: {
+    type: Sequelize.STRING
+  }
+})
 
 // before create - must check if a part with the same name exists.
 //

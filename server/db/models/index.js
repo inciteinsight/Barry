@@ -9,10 +9,10 @@ const Piece = require('./piece')
  *
  *    BlogPost.belongsTo(User)
  */
-  Line.belongsTo(Part);
-  Part.hasMany(Line);
-  Part.belongsTo(Piece);
-  Piece.hasMany(Part);
+// Line.belongsTo(Part);
+// Part.hasMany(Line);
+// Part.belongsTo(Piece);
+// Piece.hasMany(Part);
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -21,5 +21,8 @@ const Piece = require('./piece')
  * instead of: const User = require('../db/models/user')
  */
 module.exports = {
-  User, Line, Part, Piece
+  User,
+  Line,
+  Part,
+  Piece
 }
