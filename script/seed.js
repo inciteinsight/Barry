@@ -43,7 +43,7 @@ const midyearproc2019 = [
       'Many join to praise and worship you',
       'In reverence Lord',
       'The true chosen who will reap',
-      'The reward that You have laid in store'
+      'The reward that You have laid instore'
     ],
     stanza5: [
       "All our efforts, we'll intensify",
