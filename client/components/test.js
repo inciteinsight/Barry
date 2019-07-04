@@ -140,16 +140,31 @@ class Test extends Component {
     let {piece} = this.state
     return (
       <div>
-        <h4>{piece.name}</h4>
-        {piece.parts.map(part => (
-          <div>
-            <p>
-              <strong>{part.name}</strong>
-            </p>
-            {part.lines.map(line => <p>{line}</p>)}
-            {/* {part.lines.map(line => <p>{option(line)}</p>)} */}
+        <h4 className="text-center">{piece.name}</h4>
+        <div className="container d-flex justify-content-around">
+          <div className="form-container">
+            {piece.parts.map(part => (
+              <div>
+                <p>
+                  <strong>{part.name}</strong>
+                </p>
+                {part.lines.map(line => <p>{line}</p>)}
+                {/* {part.lines.map(line => <p>{option(line)}</p>)} */}
+              </div>
+            ))}
           </div>
-        ))}
+          <div className="answer-container">
+            {piece.parts.map(part => (
+              <div>
+                <p>
+                  <strong>{part.name}</strong>
+                </p>
+                {part.lines.map(line => <p>{line}</p>)}
+                {/* {part.lines.map(line => <p>{option(line)}</p>)} */}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     )
   }
