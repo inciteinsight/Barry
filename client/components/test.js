@@ -141,7 +141,7 @@ class Test extends Component {
     return (
       <div>
         <h4 className="text-center">{piece.name}</h4>
-        <div className="container d-flex justify-content-around">
+        <div className="container d-flex justify-content-center">
           <div className="form-container">
             {piece.parts.map(part => (
               <div>
