@@ -27,8 +27,8 @@ class Test extends Component {
         secondHalf: {
           enable: true
         }
-      }
-      // pieceDisplayed: midyearproc2019
+      },
+      pieceDisplayed: midyearproc2019
     }
   }
 
@@ -38,6 +38,8 @@ class Test extends Component {
   }
 
   renderPiece(option) {
+    // let {piece} = this.props
+    // let {parts} = this.props.piece
     let {piece} = this.props
     let {parts} = this.props.piece
     return (
