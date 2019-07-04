@@ -20,7 +20,7 @@ const midyearproc2019 = {
   parts: [
     {
       name: 'stanza1',
-      line: [
+      lines: [
         'Great indeed is Your unfailing love',
         'For us, O Lord God',
         'You have guided us and we remain',
@@ -31,7 +31,7 @@ const midyearproc2019 = {
     },
     {
       name: 'stanza2',
-      line: [
+      lines: [
         'Oh we celebrate and bring to You',
         'Thanksgiving and praise',
         'For the blessings and great victories',
@@ -42,7 +42,7 @@ const midyearproc2019 = {
     },
     {
       name: 'refrain',
-      line: [
+      lines: [
         'Oh, our precious and great election',
         'This, we will never waste, Lord God',
         'A gift received by those redeemed',
@@ -53,7 +53,7 @@ const midyearproc2019 = {
     },
     {
       name: 'stanza3',
-      line: [
+      lines: [
         'Through fierce persecution, You are there',
         'Defending Your fold',
         'In the darkest hours of our distress',
@@ -64,7 +64,7 @@ const midyearproc2019 = {
     },
     {
       name: 'stanza4',
-      line: [
+      lines: [
         'Your last mission of salvation grows',
         'Now spanning the globe',
         'Many join to praise and worship you',
@@ -75,7 +75,7 @@ const midyearproc2019 = {
     },
     {
       name: 'stanza5',
-      line: [
+      lines: [
         "All our efforts, we'll intensify",
         'To help spread the truth',
         'In the work of propagation, Lord',
@@ -86,7 +86,7 @@ const midyearproc2019 = {
     },
     {
       name: 'stanza6',
-      line: [
+      lines: [
         'Lord, to Your whole nation, You give heed',
         'And answer our cries',
         'That the church administration, Lord',
@@ -97,7 +97,7 @@ const midyearproc2019 = {
     },
     {
       name: 'coda',
-      line: [
+      lines: [
         'We will not separate from the right',
         'To worship You, which You bestowed on us',
         'Amen'
@@ -150,4 +150,4 @@ if (module === require.main) {
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = seed
+module.exports = {seed, midyearproc2019}
