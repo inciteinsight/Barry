@@ -10,8 +10,8 @@ export const UserHome = props => {
 
   return (
     <div>
-      <h3>Welcome, {email}</h3>
-      <p>Please Select the Test tab</p>
+      <h3 className="m-3 text-center">Welcome, {email}</h3>
+      <p className="m-3 text-center">Please Select the Test tab</p>
     </div>
   )
 }

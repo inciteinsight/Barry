@@ -1,4 +1,4 @@
-export const midyearproc2019 = {
+export const midyearprocAWS2019 = {
   name: 'Mid-Year AWS Processional 2019',
   sequence: [
     'stanza1',
