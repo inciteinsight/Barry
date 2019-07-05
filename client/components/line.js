@@ -69,9 +69,8 @@ export default class Line extends Component {
           <p>{this.props.line}</p>
         </div>
         <div className="answer-line mx-1 col">
-          <input
-            type="text"
-            rowSpan="2"
+          <textarea
+            rows="2"
             name="answer"
             value={this.state.display}
             onChange={this.handleChange}
