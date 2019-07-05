@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {MidYear2019} from '../store/lyricTempStore'
+import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 import {ListGroup} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
@@ -9,18 +9,9 @@ export default class Parameters extends Component {
 
     this.state = {
       pieceParam: MidYear2019[0].name,
-      hintParam: 'Complete'
+      hintParam: HintOptions[0].name
     }
   }
-
-  hintOptions = [
-    'Complete',
-    'Blind',
-    'First Letter',
-    'First Ten Letters',
-    'Last Ten Letters',
-    'First Letter of each Word'
-  ]
 
   handleChange = async (pieceParam = null, hintParam = null) => {
     if (pieceParam === null) {
@@ -67,23 +58,23 @@ export default class Parameters extends Component {
           <div className="m-2">
             <h5 className="text-center">Hint:</h5>
             <ListGroup defaultActiveKey="#linkh0">
-              {this.hintOptions.map(
+              {HintOptions.map(
                 (opt, i) =>
                   i === 0 ? (
                     <ListGroup.Item
                       action
                       href="#linkh0"
-                      onClick={() => this.handleChange(null, opt)}
+                      onClick={() => this.handleChange(null, opt.name)}
                     >
-                      {opt}
+                      {opt.name}
                     </ListGroup.Item>
                   ) : (
                     <ListGroup.Item
                       action
                       href={`#linkh${i}`}
-                      onClick={() => this.handleChange(null, opt)}
+                      onClick={() => this.handleChange(null, opt.name)}
                     >
-                      {opt}
+                      {opt.name}
                     </ListGroup.Item>
                   )
               )}

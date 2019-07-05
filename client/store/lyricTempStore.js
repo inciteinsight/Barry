@@ -120,3 +120,32 @@ export const MidYear2019 = [
     parts: []
   }
 ]
+
+export const HintOptions = [
+  {
+    name: 'Complete',
+    parse: line => line
+  },
+  {
+    name: 'Blind',
+    parse: line => ''
+  },
+  {
+    name: 'First Letter',
+    parse: line => line[0]
+  },
+  {
+    name: 'First Ten Letters',
+    parse: line => line.slice(0, 9)
+  },
+  {
+    name: 'Last Ten Letters',
+    parse: line => line.slice(Math.max(0, line.length - 10), line.length - 1)
+  },
+  {
+    name: 'First Letter of each Word',
+    parse: line => {
+      return line.replace(/\w[0-9A-Za-z_]*/g, /\w/g).toLowerCase()
+    }
+  }
+]

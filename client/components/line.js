@@ -65,9 +65,6 @@ export default class Line extends Component {
   render() {
     return (
       <div className="form-line-container row align-items-center">
-        <div className="hint-line mx-1 col">
-          <p>{this.props.line}</p>
-        </div>
         <div className="answer-line mx-1 col">
           <textarea
             rows="2"
@@ -76,7 +73,10 @@ export default class Line extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className="result-line mx-1 col">
+        <div className="hint-line mx-1 col">
+          <p>{this.props.line}</p>
+        </div>
+        <div className="result-line mx-1 col text-center">
           <p>{this.calculator()}%</p>
         </div>
       </div>

@@ -1,20 +1,12 @@
 import React, {Component} from 'react'
 import Line from './line'
-import {MidYear2019} from '../store/lyricTempStore'
+import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 
 class Test extends Component {
   constructor() {
     super()
     this.state = {
-      revealMode: 'Complete',
-      options: [
-        'Complete',
-        'Blind',
-        'First Letter',
-        'First Ten Letters',
-        'Last Ten Letters',
-        'First Letter of each Word'
-      ],
+      hint: /*HintOptions[0]*/ 'First Letter of each Word',
       piece: MidYear2019[0]
     }
   }
@@ -30,6 +22,11 @@ class Test extends Component {
         <p className="text-center">
           <strong>{part.name}</strong>
         </p>
+        <div className="row align-items-center">
+          <h5 className="mx-1 col text-center">Answers</h5>
+          <h5 className="mx-1 col text-center">Hints</h5>
+          <h5 className="mx-1 col text-center">Results</h5>
+        </div>
         {part.lines.map(line => <Line line={line} />)}
       </div>
     )
