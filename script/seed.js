@@ -13,8 +13,8 @@ async function seed() {
       password: 'passwordlygeneratedrandom'
     }),
     User.create({
-      email: 'murphy@email.com',
-      password: 'passwordlygeneratedrandom'
+      email: 'inc@inc.com',
+      password: '1914'
     })
   ])
 
@@ -47,4 +47,4 @@ if (module === require.main) {
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = {seed, midyearproc2019}
+module.exports = {seed}

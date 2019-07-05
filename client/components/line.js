@@ -64,11 +64,11 @@ export default class Line extends Component {
 
   render() {
     return (
-      <div className="form-line-container row align-items-start">
-        <div className="hint mx-1 col">
+      <div className="form-line-container row align-items-center">
+        <div className="hint-line mx-1 col">
           <p>{this.props.line}</p>
         </div>
-        <div className="answer mx-1 col">
+        <div className="answer-line mx-1 col">
           <input
             type="text"
             rowSpan="2"
@@ -77,7 +77,7 @@ export default class Line extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className="result mx-1 col">
+        <div className="result-line mx-1 col">
           <p>{this.calculator()}%</p>
         </div>
       </div>
