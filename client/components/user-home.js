@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {MidYear2019} from '../store/lyricTempStore'
+import Parameters from './parameters'
 
 /**
  * COMPONENT
@@ -11,7 +13,8 @@ export const UserHome = props => {
   return (
     <div>
       <h3 className="m-3 text-center">Welcome, {email}</h3>
-      <p className="m-3 text-center">Please Select the Test tab</p>
+      <hr />
+      <Parameters />
     </div>
   )
 }

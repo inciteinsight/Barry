@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Line from './line'
-import {midyearprocAWS2019} from '../store/lyricTempStore'
+import {MidYear2019} from '../store/lyricTempStore'
 
 class Test extends Component {
   constructor() {
@@ -15,7 +15,7 @@ class Test extends Component {
         'Last Ten Letters',
         'First Letter of each Word'
       ],
-      piece: midyearprocAWS2019
+      piece: MidYear2019[0]
     }
   }
 
