@@ -144,8 +144,7 @@ export const HintOptions = [
   },
   {
     name: 'First Letter of each Word',
-    parse: line => {
-      return line.replace(/\w[0-9A-Za-z_']*/g, sel => sel[0]).toUpperCase()
-    }
+    parse: line =>
+      line.replace(/\w[0-9A-Za-z_']*/g, sel => sel[0]).toUpperCase()
   }
 ]
