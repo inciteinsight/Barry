@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import MediaQuery from 'react-responsive'
 import Line from './line'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 
@@ -26,9 +27,11 @@ class Test extends Component {
           <div className="mx-1 col text-center answer-line">
             <h5>Answers</h5>
           </div>
-          <div className="mx-1 col text-center hint-line">
-            <h5>Hints</h5>
-          </div>
+          <MediaQuery query="(min-device-width: 1224px)">
+            <div className="mx-1 col text-center hint-line">
+              <h5>Hints</h5>
+            </div>
+          </MediaQuery>
           <div className="mx-1 col text-center result-line">
             <h5>Results</h5>
           </div>

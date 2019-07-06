@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import MediaQuery from 'react-responsive'
 
 export default class Line extends Component {
   constructor(props) {
@@ -73,9 +74,11 @@ export default class Line extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className="hint-line mx-1 col">
-          <p>{this.props.hint.parse(this.props.line)}</p>
-        </div>
+        <MediaQuery query="(min-device-width: 1224px)">
+          <div className="hint-line mx-1 col">
+            <p>{this.props.hint.parse(this.props.line)}</p>
+          </div>
+        </MediaQuery>
         <div className="result-line mx-1 col text-center">
           <p>{this.calculator()}%</p>
         </div>
