@@ -6,7 +6,7 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hint: /*HintOptions[0]*/ 'First Letter of each Word',
+      hint: HintOptions[3],
       piece: MidYear2019[0]
     }
   }
@@ -22,12 +22,19 @@ class Test extends Component {
         <p className="text-center">
           <strong>{part.name}</strong>
         </p>
-        <div className="row align-items-center">
-          <h5 className="mx-1 col text-center">Answers</h5>
-          <h5 className="mx-1 col text-center">Hints</h5>
-          <h5 className="mx-1 col text-center">Results</h5>
+        <div className="form-line-container row align-items-center">
+          <div className="mx-1 col text-center answer-line">
+            <h5>Answers</h5>
+          </div>
+          <div className="mx-1 col text-center hint-line">
+            <h5>Hints</h5>
+          </div>
+          <div className="mx-1 col text-center result-line">
+            <h5>Results</h5>
+          </div>
+          <div className="w-100" />
         </div>
-        {part.lines.map(line => <Line line={line} />)}
+        {part.lines.map(line => <Line line={line} hint={this.state.hint} />)}
       </div>
     )
   }

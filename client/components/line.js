@@ -74,7 +74,7 @@ export default class Line extends Component {
           />
         </div>
         <div className="hint-line mx-1 col">
-          <p>{this.props.line}</p>
+          <p>{this.props.hint.parse(this.props.line)}</p>
         </div>
         <div className="result-line mx-1 col text-center">
           <p>{this.calculator()}%</p>

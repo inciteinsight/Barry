@@ -23,3 +23,11 @@ form div {
 .initiate-test-button {
   width: 300px;
 }
+
+.hint-line {
+  min-width: 200px;
+}
+
+.answer-line {
+  min-width: 200px;
+}
