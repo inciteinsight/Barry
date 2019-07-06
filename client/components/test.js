@@ -7,7 +7,7 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hint: HintOptions[3],
+      hint: HintOptions[5],
       piece: MidYear2019[0]
     }
   }
