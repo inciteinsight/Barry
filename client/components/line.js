@@ -74,7 +74,7 @@ export default class Line extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <MediaQuery query="(min-device-width: 1224px)">
+        <MediaQuery query="(min-device-width: 750px)">
           <div className="hint-line mx-1 col">
             <p>{this.props.hint.parse(this.props.line)}</p>
           </div>

@@ -27,7 +27,7 @@ class Test extends Component {
           <div className="mx-1 col text-center answer-line">
             <h5>Answers</h5>
           </div>
-          <MediaQuery query="(min-device-width: 1224px)">
+          <MediaQuery query="(min-device-width: 750px)">
             <div className="mx-1 col text-center hint-line">
               <h5>Hints</h5>
             </div>
