@@ -7,8 +7,8 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hint: HintOptions[5],
-      piece: MidYear2019[0]
+      hint: HintOptions[2],
+      piece: MidYear2019[1]
     }
   }
 
@@ -37,9 +37,18 @@ class Test extends Component {
           </div>
           <div className="w-100" />
         </div>
-        {part.lines.map(line => <Line line={line} hint={this.state.hint} />)}
+        {part.lines.map(line => (
+          <Line line={line} hint={this.state.hint} clearForm={this.clearForm} />
+        ))}
       </div>
     )
+  }
+
+  clearForm() {
+    this.setState({
+      answer: '',
+      display: ''
+    })
   }
 
   renderPiece() {

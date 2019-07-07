@@ -107,17 +107,36 @@ export const MidYear2019 = [
     name: 'Mid-Year CWS Processional 2019',
     sequence: [
       'intro',
-      'stanza1',
-      'stanza2',
-      'refrain',
-      'stanza3',
-      'stanza4',
-      'refrain',
-      'stanza5',
-      'refrain',
-      'coda'
+      'stanza1'
+      // 'stanza2',
+      // 'refrain',
+      // 'stanza3',
+      // 'stanza4',
+      // 'refrain',
+      // 'stanza5',
+      // 'refrain',
+      // 'coda'
     ],
-    parts: []
+    parts: [
+      {
+        name: 'intro',
+        lines: [
+          'Father dear, to You all praise and honor',
+          'Oh, Your Name we worship and adore!',
+          'You divine love is beyond all measure',
+          'For the nation You have chosen, Lord'
+        ]
+      },
+      {
+        name: 'stanza1',
+        lines: [
+          'We now offer our sincere thanksgiving',
+          'For Your goodness which has filled our lives',
+          'And the victories and countless blessings',
+          'That You grant the one true Church of Christ'
+        ]
+      }
+    ]
   }
 ]
 
@@ -145,6 +164,6 @@ export const HintOptions = [
   {
     name: 'First Letter of each Word',
     parse: line =>
-      line.replace(/\w[0-9A-Za-z_']*/g, sel => sel[0]).toUpperCase()
+      line.replace(/\w[0-9A-Za-z_',!]*/g, sel => sel[0]).toUpperCase()
   }
 ]
