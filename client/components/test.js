@@ -7,12 +7,21 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hint: HintOptions[2],
-      piece: MidYear2019[1]
+      hint: HintOptions[0],
+      piece: MidYear2019[0]
+      // answer: ,
+      // display
     }
   }
 
   componentDidMount() {}
+
+  renderLine = lineInst => {
+    this.setState({})
+    return (
+      <Line line={lineInst} hint={this.state.hint} clearForm={this.clearForm} />
+    )
+  }
 
   renderForm = partName => {
     const part = this.state.piece.parts.find(

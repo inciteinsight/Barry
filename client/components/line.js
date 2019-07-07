@@ -63,6 +63,8 @@ export default class Line extends Component {
     })
   }
 
+  static getDerivedStateFromProps = (props, state) => {}
+
   render() {
     return (
       <div className="form-line-container row align-items-center">
