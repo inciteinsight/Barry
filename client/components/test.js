@@ -9,24 +9,40 @@ class Test extends Component {
     this.state = {
       hint: HintOptions[0],
       piece: MidYear2019[0],
-      answer: {},
-      display
+      answer: {
+        parts: []
+      },
+      display: {
+        parts: []
+      },
+      partMap: {}
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    // let newState = this.state
+    // newState.partMap = {
+    // }
+    // this.setState(newState)
+  }
 
-  initLine = (partName, lineInst, i) => {
+  initLine = (partName, lineIndex) => {
     let newState = this.state
-    newState.answer.parts[partName][i] = ''
-    newState.display.parts[partName][i] = ''
-    this.setState(newState)
+    newState.answer.parts[lineIndex].name = partName
+    newState.display.parts[lineIndex].line = this.setState(newState)
     return (
-      <Line line={lineInst} hint={this.state.hint} clearForm={this.clearForm} />
+      <Line
+        line={this.state.piece[partName][lineIndex]}
+        answer={this.state.answer[partName][lineIndex]}
+        display={this.state.display[partName][lineIndex]}
+        hint={this.state.hint}
+        index={lineIndex}
+        partName={partName}
+      />
     )
   }
 
-  renderForm = partName => {
+  renderForm = (partName, partIndex) => {
     const part = this.state.piece.parts.find(
       partInstance => partInstance.name === partName
     )
@@ -49,9 +65,10 @@ class Test extends Component {
           </div>
           <div className="w-100" />
         </div>
-        {part.lines.map((line, i) => (
-          <Line line={line} hint={this.state.hint} clearForm={this.clearForm} />
-        ))}
+        {part.lines.map((line, lineIndex) =>
+          // <Line line={line} hint={this.state.hint}/>
+          this.initLine(partIndex, lineIndex)
+        )}
       </div>
     )
   }
@@ -70,7 +87,9 @@ class Test extends Component {
         <h4 className="text-center">{piece.name}</h4>
         <div className="container d-flex justify-content-center row">
           <div className="form-container">
-            {piece.sequence.map(partName => this.renderForm(partName))}
+            {piece.sequence.map((partName, partIndex) =>
+              this.renderForm(partName, partIndex)
+            )}
           </div>
         </div>
       </div>
