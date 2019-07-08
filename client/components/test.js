@@ -8,16 +8,19 @@ class Test extends Component {
     super()
     this.state = {
       hint: HintOptions[0],
-      piece: MidYear2019[0]
-      // answer: ,
-      // display
+      piece: MidYear2019[0],
+      answer: {},
+      display
     }
   }
 
   componentDidMount() {}
 
-  renderLine = lineInst => {
-    this.setState({})
+  initLine = (partName, lineInst, i) => {
+    let newState = this.state
+    newState.answer.parts[partName][i] = ''
+    newState.display.parts[partName][i] = ''
+    this.setState(newState)
     return (
       <Line line={lineInst} hint={this.state.hint} clearForm={this.clearForm} />
     )
@@ -46,7 +49,7 @@ class Test extends Component {
           </div>
           <div className="w-100" />
         </div>
-        {part.lines.map(line => (
+        {part.lines.map((line, i) => (
           <Line line={line} hint={this.state.hint} clearForm={this.clearForm} />
         ))}
       </div>
