@@ -5,7 +5,7 @@ export default class Line extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      line: this.props.line,
+      line: this.props.line.replace(/[^\w\s]+/g, '').toLowerCase(),
       answer: '',
       display: ''
     }
@@ -43,8 +43,7 @@ export default class Line extends Component {
   }
 
   calculator = () => {
-    const {answer} = this.props
-    const line = this.props.line.replace(/[^\w\s]+/g, '').toLowerCase()
+    const {line, answer} = this.state
     return String(
       Math.max(
         0,
@@ -64,6 +63,8 @@ export default class Line extends Component {
     })
   }
 
+  static getDerivedStateFromProps = (props, state) => {}
+
   render() {
     return (
       <div className="form-line-container row align-items-center">
@@ -71,7 +72,7 @@ export default class Line extends Component {
           <textarea
             rows="2"
             name="answer"
-            value={this.props.display}
+            value={this.state.display}
             onChange={this.handleChange}
           />
         </div>
