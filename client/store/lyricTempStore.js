@@ -135,6 +135,61 @@ export const MidYear2019 = [
           'And the victories and countless blessings',
           'That You grant the one true Church of Christ'
         ]
+      },
+      {
+        name: 'stanza2',
+        lines: [
+          'Through all trials and all persecutions',
+          'Through the many hardships that have come',
+          'You are always there to help Your children',
+          'Oh You are, indeed, so good to us!'
+        ]
+      },
+      {
+        name: 'refrain',
+        lines: [
+          'With the highest regard, we will uphold',
+          'This divine calling You bestowed, O Lord',
+          'We will never waste our great election',
+          'We will love this blessing all the more'
+        ]
+      },
+      {
+        name: 'stanza3',
+        lines: [
+          'Now Your Church is growing and progressing',
+          'Reaching nations everywhere on Earth',
+          'For Your praise, the members are increasing',
+          'Joining in true worship in Your Church'
+        ]
+      },
+      {
+        name: 'stanza4',
+        lines: [
+          'While we still have life and strength, O Father',
+          'We will help in missionary work',
+          'And we promise, we will always serve You',
+          'So that we will always please You, Lord'
+        ]
+      },
+      {
+        name: 'stanza5',
+        lines: [
+          'Thank You for remaining with and guiding',
+          'The administration that You placed',
+          'May you always care for and protect them',
+          'So that we are led to perfect faith'
+        ]
+      },
+      {
+        name: 'coda',
+        lines: [
+          'Father, help us, oh, help us all our days',
+          'To be faithful and never leave Your Side',
+          'So that we will all receive salvation',
+          'And the promised everlasting life',
+          'Amen'
+        ]
       }
     ]
   }
