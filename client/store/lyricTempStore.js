@@ -107,15 +107,15 @@ export const MidYear2019 = [
     name: 'Mid-Year CWS Processional 2019',
     sequence: [
       'intro',
-      'stanza1'
-      // 'stanza2',
-      // 'refrain',
-      // 'stanza3',
-      // 'stanza4',
-      // 'refrain',
-      // 'stanza5',
-      // 'refrain',
-      // 'coda'
+      'stanza1',
+      'stanza2',
+      'refrain',
+      'stanza3',
+      'stanza4',
+      'refrain',
+      'stanza5',
+      'refrain',
+      'coda'
     ],
     parts: [
       {
