@@ -15,16 +15,6 @@ class Test extends Component {
 
   componentDidMount() {}
 
-  // initLine = (partName, lineInst, i) => {
-  //   let newState = this.state
-  //   newState.answer.parts[partName][i] = ''
-  //   newState.display.parts[partName][i] = ''
-  //   this.setState(newState)
-  //   return (
-  //     <Line line={lineInst} hint={this.state.hint} clearForm={this.clearForm} />
-  //   )
-  // }
-
   renderForm = partName => {
     const part = this.state.piece.parts.find(
       partInstance => partInstance.name === partName
