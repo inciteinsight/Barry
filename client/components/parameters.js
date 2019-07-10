@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
+import {getPieceThunk, getHintThunk} from '../store/'
 import {ListGroup} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
-export default class Parameters extends Component {
+class Parameters extends Component {
   constructor(props) {
     super(props)
 
@@ -90,3 +92,19 @@ export default class Parameters extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  piece: state.piece.selectedPiece,
+  hint: state.piece.selectedHint
+})
+
+const mapDispatchToProps = dispatch => ({
+  onLoadPiece: pieceId => {
+    dispatch(getPieceThunk(pieceId))
+  },
+  onLoadHint: hintName => {
+    dispatch(getHintThunk(hintName))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Parameters)
