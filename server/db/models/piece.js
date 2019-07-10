@@ -10,4 +10,6 @@ const Piece = db.define('piece', {
   }
 })
 
+module.exports = Piece
+
 // Check if all parts are accounted for in the sequence

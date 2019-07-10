@@ -7,3 +7,5 @@ const Line = db.define('line', {
     allowNull: false
   }
 })
+
+module.exports = Line

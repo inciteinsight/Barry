@@ -192,6 +192,60 @@ export const MidYear2019 = [
         ]
       }
     ]
+  },
+  {
+    id: 3,
+    name: 'Mid-Year AWS Spanish Processional 2019',
+    sequence: [
+      'stanza1',
+      'stanza2',
+      'refrain',
+      'stanza3',
+      'stanza4',
+      'refrain',
+      'stanza5',
+      'stanza6',
+      'refrain',
+      'coda'
+    ],
+    parts: [
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      },
+      {
+        name: '',
+        lines: ['', '', '', '']
+      }
+    ]
   }
 ]
 

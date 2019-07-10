@@ -7,6 +7,8 @@ const Part = db.define('part', {
   }
 })
 
+module.exports = Part
+
 // before create - must check if a part with the same name exists.
 //
 // In a speech, we cannot have two introductions
