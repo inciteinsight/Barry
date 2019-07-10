@@ -199,51 +199,100 @@ export const MidYear2019 = [
     sequence: [
       'stanza1',
       'stanza2',
-      'refrain',
+      'estribillo',
       'stanza3',
       'stanza4',
-      'refrain',
+      'estribillo',
       'stanza5',
       'stanza6',
-      'refrain',
+      'estribillo',
       'coda'
     ],
     parts: [
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'stanza1',
+        lines: [
+          'Nuestro Dios, grandioso es Tu amor',
+          'Por Tu santa nacion',
+          'Y a nosotros, Tus elegidos',
+          'Nos guias te sin cesar',
+          'Hoy es el dia especial',
+          'De Tu amada Iglesia De Cristo'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'stanza2',
+        lines: [
+          'Ahora estamos celebrandolo',
+          'Te da mos las gracias',
+          'Por las bendiciones y exitos',
+          'Que porvienen de Ti',
+          'Toda prueba y dificultad',
+          'Por Tu ayuda pudimos superar'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'estribillo',
+        lines: [
+          'Oh, jamas desperdiciaremos',
+          'La preciada y grandiosa eleccion',
+          'A causa de la redencion',
+          'Cuando Jesucristo nos redimio',
+          'Oh, jamas nos vamos a separar',
+          'Del derecho que nos diste, nuestro Dios'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'stanza3',
+        lines: [
+          'De la severa persecusion',
+          'Nos Has defendido',
+          'Y de la intensa dificultad',
+          'Nos has rescatado',
+          'Bondadoso eres, nuestro Dios',
+          'A tu Iglesia concedes bendicion'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'stanza4',
+        lines: [
+          'Tu santa obra de salvacion',
+          'Ya esta extendida',
+          'Y los que Te adoran de verdad',
+          'No dejan de aumentar',
+          'Solo Tus elegidos',
+          'Obtendran el preciado galardon'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'stanza5',
+        lines: [
+          'La obra de propagacion',
+          'Vamos a intensificar',
+          'Ayudando todos mucho mas,',
+          'Frutos vamos a dar',
+          'Para que se as agradado',
+          'Siempre Te serviremos, Senor'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'stanza6',
+        lines: [
+          'Padre, Tu escuchas la oracion',
+          'De tu santa nacion',
+          'De cuidar a la Administracion',
+          'De Tu Iglesia',
+          'Para que nos pueda presentar',
+          'Perfectos ante Ti, nuestro amado Dios'
+        ]
       },
       {
-        name: '',
-        lines: ['', '', '', '']
-      },
-      {
-        name: '',
-        lines: ['', '', '', '']
+        name: 'coda',
+        lines: [
+          'Oh, jamas nos vamos a separar',
+          'Del derecho que nos diste, nuestro Dios',
+          'Amen'
+        ]
       }
     ]
   }
