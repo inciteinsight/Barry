@@ -28,6 +28,33 @@ class Parameters extends Component {
     }
   }
 
+  renderHintSelection() {
+    return (
+      <ListGroup defaultActiveKey={`#linkh${this.props.selectedHint.id}`}>
+        {HintOptions.map(
+          (opt, i) =>
+            i === 0 ? (
+              <ListGroup.Item
+                action
+                href="#linkh0"
+                onClick={() => this.handleChange(null, opt.name)}
+              >
+                {opt.name}
+              </ListGroup.Item>
+            ) : (
+              <ListGroup.Item
+                action
+                href={`#linkh${i}`}
+                onClick={() => this.handleChange(null, opt.name)}
+              >
+                {opt.name}
+              </ListGroup.Item>
+            )
+        )}
+      </ListGroup>
+    )
+  }
+
   render() {
     return (
       <div>
@@ -59,28 +86,7 @@ class Parameters extends Component {
           </div>
           <div className="m-2">
             <h5 className="text-center">Hint:</h5>
-            <ListGroup defaultActiveKey="#linkh0">
-              {HintOptions.map(
-                (opt, i) =>
-                  i === 0 ? (
-                    <ListGroup.Item
-                      action
-                      href="#linkh0"
-                      onClick={() => this.handleChange(null, opt.name)}
-                    >
-                      {opt.name}
-                    </ListGroup.Item>
-                  ) : (
-                    <ListGroup.Item
-                      action
-                      href={`#linkh${i}`}
-                      onClick={() => this.handleChange(null, opt.name)}
-                    >
-                      {opt.name}
-                    </ListGroup.Item>
-                  )
-              )}
-            </ListGroup>
+            {this.renderHintSelection()}
           </div>
         </div>
         <div className="d-flex align-items-center flex-column">

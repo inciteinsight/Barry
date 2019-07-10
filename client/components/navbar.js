@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap'
 import {logout} from '../store'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
@@ -10,15 +11,21 @@ const Navbar = ({handleClick, isLoggedIn}) => (
     <nav>
       {isLoggedIn ? (
         <div>
-          <Link to="/home">Home</Link>
+          <Link to="/home">
+            <Button variant="primary">Home</Button>
+          </Link>
           <a href="#" onClick={handleClick}>
-            Logout
+            <Button variant="primary">Logout</Button>
           </a>
         </div>
       ) : (
         <div>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/login">
+            <Button variant="primary">Login</Button>
+          </Link>
+          <Link to="/signup">
+            <Button variant="primary">Sign Up</Button>
+          </Link>
         </div>
       )}
     </nav>

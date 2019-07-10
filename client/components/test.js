@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import MediaQuery from 'react-responsive'
+import {DropdownButton, Dropdown} from 'react-bootstrap'
 import Line from './line'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 
@@ -8,8 +10,7 @@ class Test extends Component {
     super()
     this.state = {
       hint: HintOptions[0],
-      piece: MidYear2019[0],
-      answer: {}
+      piece: MidYear2019[0]
     }
   }
 
@@ -64,4 +65,18 @@ class Test extends Component {
   }
 }
 
-export default Test
+const mapStateToProps = state => ({
+  piece: state.piece.selectedPiece,
+  hint: state.piece.selectedHint
+})
+
+const mapDispatchToProps = dispatch => ({
+  onLoadPiece: piececName => {
+    dispatch(getPieceThunk(piececName))
+  },
+  onLoadHint: hintName => {
+    dispatch(getHintThunk(hintName))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Test)
