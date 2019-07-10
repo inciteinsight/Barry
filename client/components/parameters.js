@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 import {getPieceThunk, getHintThunk} from '../store/'
 import {ListGroup} from 'react-bootstrap'
@@ -8,22 +9,22 @@ import {Button} from 'react-bootstrap'
 class Parameters extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       pieceParam: MidYear2019[0].name,
       hintParam: HintOptions[0].name
     }
   }
 
+  async componentDidMount() {
+    await this.props.onLoadPiece(this.state.pieceParam)
+    await this.props.onLoadHint(this.state.hintParam)
+  }
+
   handleChange = async (pieceParam = null, hintParam = null) => {
     if (pieceParam === null) {
-      await this.setState({
-        hintParam
-      })
+      await this.props.onLoadHint(hintParam)
     } else {
-      await this.setState({
-        pieceParam
-      })
+      await this.props.onLoadPiece(pieceParam)
     }
   }
 
@@ -84,9 +85,15 @@ class Parameters extends Component {
         </div>
         <div className="d-flex align-items-center flex-column">
           <hr />
-          <Button className="initiate-test-button" size="lg" variant="success">
-            Initiate Test
-          </Button>
+          <Link to="/test">
+            <Button
+              className="initiate-test-button"
+              size="lg"
+              variant="success"
+            >
+              Initiate Test
+            </Button>
+          </Link>
         </div>
       </div>
     )
@@ -99,8 +106,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onLoadPiece: pieceId => {
-    dispatch(getPieceThunk(pieceId))
+  onLoadPiece: piececName => {
+    dispatch(getPieceThunk(piececName))
   },
   onLoadHint: hintName => {
     dispatch(getHintThunk(hintName))

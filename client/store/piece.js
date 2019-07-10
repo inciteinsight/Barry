@@ -18,9 +18,9 @@ const getHint = selectedHint => ({
   selectedHint
 })
 
-export const getPieceThunk = pieceId => async dispatch => {
+export const getPieceThunk = pieceName => async dispatch => {
   try {
-    const data = await MidYear2019.find(piece => piece.id === pieceId)
+    const data = await MidYear2019.find(piece => piece.name === pieceName)
     console.log(data)
     dispatch(getPiece(data))
   } catch (error) {
