@@ -123,7 +123,7 @@ export const MidYear2019 = [
         lines: [
           'Father dear, to You all praise and honor',
           'Oh, Your Name we worship and adore!',
-          'You divine love is beyond all measure',
+          'Your divine love is beyond all measure',
           'For the nation You have chosen, Lord'
         ]
       },

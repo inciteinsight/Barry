@@ -8,7 +8,7 @@ class Test extends Component {
     super()
     this.state = {
       hint: HintOptions[0],
-      piece: MidYear2019[1],
+      piece: MidYear2019[0],
       answer: {}
     }
   }

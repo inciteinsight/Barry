@@ -23,7 +23,6 @@ export default class Parameters extends Component {
         pieceParam
       })
     }
-    console.log(this.state)
   }
 
   render() {
