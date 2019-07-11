@@ -7,7 +7,14 @@ export default class Line extends Component {
     this.state = {
       correct: this.props.correct.replace(/[^\w\s]+/g, '').toLowerCase(),
       parsed: this.props.answer.replace(/[^\w\s]+/g, '').toLowerCase() /*,*/
-      // display: ''
+    }
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (this.props.answer !== prevProps.answer) {
+      await this.setState({
+        parsed: this.props.answer.replace(/[^\w\s]+/g, '').toLowerCase()
+      })
     }
   }
 
@@ -58,9 +65,9 @@ export default class Line extends Component {
 
   handleChange = async event => {
     let {value} = event.target
-    await this.setState({
-      parsed: value.replace(/[^\w\s]+/g, '').toLowerCase()
-    })
+    // await this.setState({
+    //   parsed: value.replace(/[^\w\s]+/g, '').toLowerCase()
+    // })
     await this.props.handleLineChange(
       value,
       this.props.partIndex,
@@ -74,7 +81,7 @@ export default class Line extends Component {
         <div className="answer-line mx-1 col">
           <textarea
             rows="2"
-            name="parsed"
+            name="display"
             value={this.props.answer}
             onChange={this.handleChange}
           />
