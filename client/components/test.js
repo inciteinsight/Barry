@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import MediaQuery from 'react-responsive'
 import {DropdownButton, Dropdown} from 'react-bootstrap'
+import {getHintThunk} from '../store'
 import Line from './line'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 
@@ -9,12 +10,16 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hint: HintOptions[5],
-      piece: MidYear2019[1]
+      hintOptions: HintOptions
+      // piece: MidYear2019[1]
     }
   }
 
   componentDidMount() {}
+
+  handleChange = async hintParam => {
+    await this.props.onLoadHint(hintParam)
+  }
 
   renderForm = partName => {
     const part = this.props.piece.parts.find(
@@ -54,12 +59,14 @@ class Test extends Component {
           <h4 className="text-center mr-3">{piece.name}</h4>
           <DropdownButton
             id="dropdown-basic-button"
-            title="Dropdown button"
+            title="Hint Options"
             classnName="ml-4"
           >
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            {this.state.hintOptions.map(hint => (
+              <Dropdown.Item onClick={() => this.handleChange(hint.name)}>
+                {hint.name}
+              </Dropdown.Item>
+            ))}
           </DropdownButton>
         </div>
         <div className="container d-flex justify-content-center row">
@@ -82,9 +89,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onLoadPiece: piececName => {
-    dispatch(getPieceThunk(piececName))
-  },
   onLoadHint: hintName => {
     dispatch(getHintThunk(hintName))
   }

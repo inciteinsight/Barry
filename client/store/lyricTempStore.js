@@ -322,7 +322,7 @@ export const HintOptions = [
   {
     id: 4,
     name: 'Last Ten Letters',
-    parse: line => line.slice(Math.max(0, line.length - 10), line.length - 1)
+    parse: line => line.slice(Math.max(0, line.length - 9), line.length)
   },
   {
     id: 5,
