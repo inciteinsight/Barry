@@ -5,9 +5,9 @@ export default class Line extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      correct: this.props.line.replace(/[^\w\s]+/g, '').toLowerCase(),
-      parsed: '',
-      display: ''
+      correct: this.props.correct.replace(/[^\w\s]+/g, '').toLowerCase(),
+      parsed: this.props.answer.replace(/[^\w\s]+/g, '').toLowerCase() /*,*/
+      // display: ''
     }
   }
 
@@ -57,13 +57,12 @@ export default class Line extends Component {
   }
 
   handleChange = async event => {
+    let {value} = event.target
     await this.setState({
-      parsed: event.target.value.replace(/[^\w\s]+/g, '').toLowerCase(),
-      display: event.target.value
+      parsed: value.replace(/[^\w\s]+/g, '').toLowerCase()
     })
-    console.log('answer-------> ', this.props.answer)
-    this.props.handleLineChange(
-      this.state.display,
+    await this.props.handleLineChange(
+      value,
       this.props.partIndex,
       this.props.lineIndex
     )
@@ -76,13 +75,13 @@ export default class Line extends Component {
           <textarea
             rows="2"
             name="parsed"
-            value={this.state.display}
+            value={this.props.answer}
             onChange={this.handleChange}
           />
         </div>
         <MediaQuery query="(min-device-width: 750px)">
           <div className="hint-line mx-1 col">
-            <p>{this.props.hint.parse(this.state.correct)}</p>
+            <p>{this.props.hint.parse(this.props.correct)}</p>
           </div>
         </MediaQuery>
         <div className="result-line mx-1 col text-center">

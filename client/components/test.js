@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import MediaQuery from 'react-responsive'
-import {DropdownButton, Dropdown} from 'react-bootstrap'
+import {ButtonToolbar, DropdownButton, Dropdown} from 'react-bootstrap'
 import {getHintThunk} from '../store'
 import Line from './line'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
@@ -48,7 +48,6 @@ class Test extends Component {
       await this.setState({
         answer
       })
-      console.log('piece ------>', this.state.answer)
     }
   }
 
@@ -78,7 +77,7 @@ class Test extends Component {
         </div>
         {part.lines.map((line, lineIndex) => (
           <Line
-            line={line}
+            correct={line}
             lineIndex={lineIndex}
             partIndex={partIndex}
             answer={answer[partIndex].lines[lineIndex]}
@@ -94,18 +93,29 @@ class Test extends Component {
     let {piece} = this.props
     return (
       <div className="d-flex flex-column align-items-center">
-        <div className="d-flex">
-          <h4 className="text-center mr-3">{piece.name}</h4>
+        <h4 className="text-center">{piece.name}</h4>
+        <div className="d-flex flex-wrap">
           <DropdownButton
             id="dropdown-basic-button"
             title="Hint Options"
-            classnName="ml-4"
+            className="mx-3"
           >
             {this.state.hintOptions.map(hint => (
               <Dropdown.Item onClick={() => this.handleHintChange(hint.name)}>
                 {hint.name}
               </Dropdown.Item>
             ))}
+          </DropdownButton>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Test Options"
+            className="mx-3"
+          >
+            <Dropdown.Item disabled onClick={() => this.initiateAnswer()}>
+              Reset Test
+            </Dropdown.Item>
+            <Dropdown.Item disabled>Calculate Result</Dropdown.Item>
+            <Dropdown.Item disabled>Submit</Dropdown.Item>
           </DropdownButton>
         </div>
         <div className="container d-flex justify-content-center row">
