@@ -7,8 +7,8 @@ import {ListGroup} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
 class Parameters extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       pieceParam: MidYear2019[0].name,
       hintParam: HintOptions[0].name
@@ -29,8 +29,8 @@ class Parameters extends Component {
   }
 
   renderHintSelection() {
-    return (
-      <ListGroup defaultActiveKey={`#linkh${this.props.selectedHint.id}`}>
+    return this.props.hint && this.props.piece ? (
+      <ListGroup defaultActiveKey={`#linkh${this.props.hint.id}`}>
         {HintOptions.map(
           (opt, i) =>
             i === 0 ? (
@@ -52,6 +52,8 @@ class Parameters extends Component {
             )
         )}
       </ListGroup>
+    ) : (
+      <div>Loading</div>
     )
   }
 

@@ -9,15 +9,15 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hint: HintOptions[0],
-      piece: MidYear2019[0]
+      hint: HintOptions[5],
+      piece: MidYear2019[1]
     }
   }
 
   componentDidMount() {}
 
   renderForm = partName => {
-    const part = this.state.piece.parts.find(
+    const part = this.props.piece.parts.find(
       partInstance => partInstance.name === partName
     )
     return (
@@ -40,17 +40,28 @@ class Test extends Component {
           <div className="w-100" />
         </div>
         {part.lines.map((line, i) => (
-          <Line line={line} hint={this.state.hint} />
+          <Line line={line} hint={this.props.hint} />
         ))}
       </div>
     )
   }
 
   renderPiece() {
-    let {piece} = this.state
+    let {piece} = this.props
     return (
-      <div>
-        <h4 className="text-center">{piece.name}</h4>
+      <div className="d-flex flex-column align-items-center">
+        <div className="d-flex">
+          <h4 className="text-center mr-3">{piece.name}</h4>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Dropdown button"
+            classnName="ml-4"
+          >
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
+        </div>
         <div className="container d-flex justify-content-center row">
           <div className="form-container">
             {piece.sequence.map(partName => this.renderForm(partName))}
