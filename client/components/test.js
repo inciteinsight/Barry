@@ -11,7 +11,7 @@ class Test extends Component {
     super()
     this.state = {
       hintOptions: HintOptions,
-      answer: {}
+      answer: []
     }
   }
 
@@ -24,7 +24,7 @@ class Test extends Component {
   }
 
   handleLineChange = async (newLine, partIndex, lineIndex) => {
-    let answer = await {...this.state.answer}
+    let answer = await [...this.state.answer]
     answer[partIndex].lines[lineIndex] = newLine
     await this.setState({
       answer
@@ -56,6 +56,7 @@ class Test extends Component {
     const part = this.props.piece.parts.find(
       partInstance => partInstance.name === partName
     )
+    const {answer} = this.state
     return (
       <div>
         <p className="text-center">
@@ -80,6 +81,7 @@ class Test extends Component {
             line={line}
             lineIndex={lineIndex}
             partIndex={partIndex}
+            answer={answer[partIndex].lines[lineIndex]}
             hint={this.props.hint}
             handleLineChange={this.handleLineChange}
           />
@@ -118,7 +120,11 @@ class Test extends Component {
   }
 
   render() {
-    return this.renderPiece()
+    if (this.state.answer.length > 0) {
+      return this.renderPiece()
+    } else {
+      return <div>Loading...</div>
+    }
   }
 }
 

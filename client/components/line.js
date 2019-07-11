@@ -6,7 +6,7 @@ export default class Line extends Component {
     super(props)
     this.state = {
       correct: this.props.line.replace(/[^\w\s]+/g, '').toLowerCase(),
-      answer: '',
+      parsed: '',
       display: ''
     }
   }
@@ -43,12 +43,12 @@ export default class Line extends Component {
   }
 
   calculator = () => {
-    const {correct, answer} = this.state
+    const {correct, parsed} = this.state
     return String(
       Math.max(
         0,
         Math.round(
-          (correct.length - this.levenshteinDistance(correct, answer)) /
+          (correct.length - this.levenshteinDistance(correct, parsed)) /
             correct.length *
             100
         )
@@ -58,9 +58,10 @@ export default class Line extends Component {
 
   handleChange = async event => {
     await this.setState({
-      answer: event.target.value.replace(/[^\w\s]+/g, '').toLowerCase(),
+      parsed: event.target.value.replace(/[^\w\s]+/g, '').toLowerCase(),
       display: event.target.value
     })
+    console.log('answer-------> ', this.props.answer)
     this.props.handleLineChange(
       this.state.display,
       this.props.partIndex,
@@ -74,7 +75,7 @@ export default class Line extends Component {
         <div className="answer-line mx-1 col">
           <textarea
             rows="2"
-            name="answer"
+            name="parsed"
             value={this.state.display}
             onChange={this.handleChange}
           />
