@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import MediaQuery from 'react-responsive'
-import {ButtonToolbar, DropdownButton, Dropdown} from 'react-bootstrap'
+import {DropdownButton, Dropdown} from 'react-bootstrap'
 import {getHintThunk} from '../store'
 import Line from './line'
-import {MidYear2019, HintOptions} from '../store/lyricTempStore'
+import {HintOptions} from '../store/lyricTempStore'
 
 class Test extends Component {
   constructor() {
@@ -29,7 +29,6 @@ class Test extends Component {
     await this.setState({
       answer
     })
-    console.log(this.state.answer)
   }
 
   initiateAnswer = async () => {

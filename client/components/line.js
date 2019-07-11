@@ -65,9 +65,6 @@ export default class Line extends Component {
 
   handleChange = async event => {
     let {value} = event.target
-    // await this.setState({
-    //   parsed: value.replace(/[^\w\s]+/g, '').toLowerCase()
-    // })
     await this.props.handleLineChange(
       value,
       this.props.partIndex,
