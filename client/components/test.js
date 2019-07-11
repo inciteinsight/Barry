@@ -19,8 +19,17 @@ class Test extends Component {
     this.initiateAnswer()
   }
 
-  handleChange = async hintParam => {
+  handleHintChange = async hintParam => {
     await this.props.onLoadHint(hintParam)
+  }
+
+  handleLineChange = async (newLine, partIndex, lineIndex) => {
+    let answer = await {...this.state.answer}
+    answer[partIndex].lines[lineIndex] = newLine
+    await this.setState({
+      answer
+    })
+    console.log(this.state.answer)
   }
 
   initiateAnswer = async () => {
@@ -43,7 +52,7 @@ class Test extends Component {
     }
   }
 
-  renderForm = partName => {
+  renderForm = (partName, partIndex) => {
     const part = this.props.piece.parts.find(
       partInstance => partInstance.name === partName
     )
@@ -66,8 +75,14 @@ class Test extends Component {
           </div>
           <div className="w-100" />
         </div>
-        {part.lines.map((line, i) => (
-          <Line line={line} hint={this.props.hint} />
+        {part.lines.map((line, lineIndex) => (
+          <Line
+            line={line}
+            lineIndex={lineIndex}
+            partIndex={partIndex}
+            hint={this.props.hint}
+            handleLineChange={this.handleLineChange}
+          />
         ))}
       </div>
     )
@@ -85,7 +100,7 @@ class Test extends Component {
             classnName="ml-4"
           >
             {this.state.hintOptions.map(hint => (
-              <Dropdown.Item onClick={() => this.handleChange(hint.name)}>
+              <Dropdown.Item onClick={() => this.handleHintChange(hint.name)}>
                 {hint.name}
               </Dropdown.Item>
             ))}
@@ -93,7 +108,9 @@ class Test extends Component {
         </div>
         <div className="container d-flex justify-content-center row">
           <div className="form-container">
-            {piece.sequence.map(partName => this.renderForm(partName))}
+            {piece.sequence.map((partName, partIndex) =>
+              this.renderForm(partName, partIndex)
+            )}
           </div>
         </div>
       </div>

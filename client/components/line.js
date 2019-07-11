@@ -5,7 +5,7 @@ export default class Line extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      line: this.props.line.replace(/[^\w\s]+/g, '').toLowerCase(),
+      correct: this.props.line.replace(/[^\w\s]+/g, '').toLowerCase(),
       answer: '',
       display: ''
     }
@@ -43,27 +43,30 @@ export default class Line extends Component {
   }
 
   calculator = () => {
-    const {line, answer} = this.state
+    const {correct, answer} = this.state
     return String(
       Math.max(
         0,
         Math.round(
-          (line.length - this.levenshteinDistance(line, answer)) /
-            line.length *
+          (correct.length - this.levenshteinDistance(correct, answer)) /
+            correct.length *
             100
         )
       )
     )
   }
 
-  handleChange = event => {
-    this.setState({
+  handleChange = async event => {
+    await this.setState({
       answer: event.target.value.replace(/[^\w\s]+/g, '').toLowerCase(),
       display: event.target.value
     })
+    this.props.handleLineChange(
+      this.state.display,
+      this.props.partIndex,
+      this.props.lineIndex
+    )
   }
-
-  static getDerivedStateFromProps = (props, state) => {}
 
   render() {
     return (
@@ -78,7 +81,7 @@ export default class Line extends Component {
         </div>
         <MediaQuery query="(min-device-width: 750px)">
           <div className="hint-line mx-1 col">
-            <p>{this.props.hint.parse(this.props.line)}</p>
+            <p>{this.props.hint.parse(this.state.correct)}</p>
           </div>
         </MediaQuery>
         <div className="result-line mx-1 col text-center">
