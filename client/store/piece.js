@@ -8,8 +8,6 @@ const initialState = {
 
 const GET_PIECE = 'GET_PIECE'
 const GET_HINT = 'GET_HINT'
-const UPDATE_ANSWER = 'UPDATE_ANSWER'
-const RESET_ANSWER = 'RESET_ANSWER'
 
 const getPiece = selectedPiece => ({
   type: GET_PIECE,
@@ -19,17 +17,6 @@ const getPiece = selectedPiece => ({
 const getHint = selectedHint => ({
   type: GET_HINT,
   selectedHint
-})
-
-const updateAnswer = (partNumber, lineNumber) => ({
-  type: UPDATE_ANSWER,
-  partNumber,
-  lineNumber
-})
-
-const resetAnswer = answer => ({
-  type: RESET_ANSWER,
-  answer
 })
 
 export const getPieceThunk = pieceName => async dispatch => {
@@ -58,7 +45,6 @@ export const resetAnswerThunk = selectedPiece => async dispatch => {
         line = ''
       })
     })
-    console.log(answer)
   } catch (error) {
     console.error(error)
   }
@@ -72,9 +58,6 @@ export default function(state = initialState, action) {
       return newState
     case GET_HINT:
       newState.selectedHint = action.selectedHint
-      return newState
-    case RESET_ANSWER:
-      newState.answer = action.answer
       return newState
     default:
       return state
