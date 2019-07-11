@@ -10,15 +10,37 @@ class Test extends Component {
   constructor() {
     super()
     this.state = {
-      hintOptions: HintOptions
-      // piece: MidYear2019[1]
+      hintOptions: HintOptions,
+      answer: {}
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.initiateAnswer()
+  }
 
   handleChange = async hintParam => {
     await this.props.onLoadHint(hintParam)
+  }
+
+  initiateAnswer = async () => {
+    let {piece} = this.props
+    if (piece) {
+      let pieceRendered = piece.sequence.map(partName => {
+        let part = piece.parts.find(p => p.name === partName)
+        return part
+      })
+      let answer = pieceRendered.map(partInstance => ({
+        name: partInstance.name,
+        lines: partInstance.lines.map(() => {
+          return ''
+        })
+      }))
+      await this.setState({
+        answer
+      })
+      console.log('piece ------>', this.state.answer)
+    }
   }
 
   renderForm = partName => {

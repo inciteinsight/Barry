@@ -2,11 +2,14 @@ import {MidYear2019, HintOptions} from './lyricTempStore'
 
 const initialState = {
   selectedPiece: MidYear2019[0],
-  selectedHint: HintOptions[0]
+  selectedHint: HintOptions[0],
+  answer: {}
 }
 
 const GET_PIECE = 'GET_PIECE'
 const GET_HINT = 'GET_HINT'
+const UPDATE_ANSWER = 'UPDATE_ANSWER'
+const RESET_ANSWER = 'RESET_ANSWER'
 
 const getPiece = selectedPiece => ({
   type: GET_PIECE,
@@ -18,10 +21,20 @@ const getHint = selectedHint => ({
   selectedHint
 })
 
+const updateAnswer = (partNumber, lineNumber) => ({
+  type: UPDATE_ANSWER,
+  partNumber,
+  lineNumber
+})
+
+const resetAnswer = answer => ({
+  type: RESET_ANSWER,
+  answer
+})
+
 export const getPieceThunk = pieceName => async dispatch => {
   try {
     const data = await MidYear2019.find(piece => piece.name === pieceName)
-    console.log(data)
     dispatch(getPiece(data))
   } catch (error) {
     console.error(error)
@@ -31,8 +44,21 @@ export const getPieceThunk = pieceName => async dispatch => {
 export const getHintThunk = hintName => async dispatch => {
   try {
     const data = await HintOptions.find(opt => opt.name === hintName)
-    console.log(data)
     dispatch(getHint(data))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const resetAnswerThunk = selectedPiece => async dispatch => {
+  try {
+    let answer = selectedPiece
+    answer.sequence.forEach(part => {
+      part.lines.forEach(line => {
+        line = ''
+      })
+    })
+    console.log(answer)
   } catch (error) {
     console.error(error)
   }
@@ -46,6 +72,9 @@ export default function(state = initialState, action) {
       return newState
     case GET_HINT:
       newState.selectedHint = action.selectedHint
+      return newState
+    case RESET_ANSWER:
+      newState.answer = action.answer
       return newState
     default:
       return state
