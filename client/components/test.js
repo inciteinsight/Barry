@@ -23,9 +23,10 @@ class Test extends Component {
     await this.props.onLoadHint(hintParam)
   }
 
-  handleLineChange = async (newLine, partIndex, lineIndex) => {
+  handleLineChange = async (newLine, partIndex, lineIndex, completion) => {
     let answer = await [...this.state.answer]
     answer[partIndex].lines[lineIndex] = newLine
+    answer[partIndex].completion[lineIndex] = completion
     await this.setState({
       answer
     })
@@ -83,6 +84,7 @@ class Test extends Component {
             lineIndex={lineIndex}
             partIndex={partIndex}
             answer={answer[partIndex].lines[lineIndex]}
+            completion={answer[partIndex].completion[lineIndex]}
             hint={this.props.hint}
             handleLineChange={this.handleLineChange}
           />

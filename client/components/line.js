@@ -68,7 +68,8 @@ export default class Line extends Component {
     await this.props.handleLineChange(
       value,
       this.props.partIndex,
-      this.props.lineIndex
+      this.props.lineIndex,
+      this.calculator()
     )
   }
 
