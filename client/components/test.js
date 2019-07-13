@@ -42,6 +42,9 @@ class Test extends Component {
         name: partInstance.name,
         lines: partInstance.lines.map(() => {
           return ''
+        }),
+        completion: partInstance.lines.map(() => {
+          return 0
         })
       }))
       await this.setState({
@@ -93,6 +96,7 @@ class Test extends Component {
     return (
       <div className="d-flex flex-column align-items-center">
         <h4 className="text-center">{piece.name}</h4>
+        {/* <div>Percentage Goes Here</div> */}
         <div className="d-flex flex-wrap">
           <DropdownButton
             id="dropdown-basic-button"
