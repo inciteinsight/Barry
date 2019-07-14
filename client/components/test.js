@@ -31,6 +31,18 @@ class Test extends Component {
     })
   }
 
+  showTotalPercentage = () =>
+    this.state.answer.reduce((sum, part) => {
+      return (
+        sum +
+        Number(
+          part.completion.reduce((sum, compInstance) => {
+            return sum + Number(compInstance)
+          }, 0)
+        )
+      )
+    }, 0)
+
   handleLineChange = async (newLine, partIndex, lineIndex) => {
     let answer = await [...this.state.answer]
     let correct = this.showCurrentPiece()[partIndex].lines[lineIndex]
@@ -107,7 +119,7 @@ class Test extends Component {
     return (
       <div className="d-flex flex-column align-items-center">
         <h4 className="text-center">{piece.name}</h4>
-        {/* <div>Percentage Goes Here</div> */}
+        <h3>Completed: {this.showTotalPercentage()}</h3>
         <div className="d-flex flex-wrap">
           <DropdownButton
             id="dropdown-basic-button"
