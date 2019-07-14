@@ -68,8 +68,7 @@ export default class Line extends Component {
     await this.props.handleLineChange(
       value,
       this.props.partIndex,
-      this.props.lineIndex,
-      this.calculator()
+      this.props.lineIndex
     )
   }
 
@@ -90,7 +89,7 @@ export default class Line extends Component {
           </div>
         </MediaQuery>
         <div className="result-line mx-1 col text-center">
-          <p>{this.calculator()}%</p>
+          <p>{this.props.completion}%</p>
         </div>
       </div>
     )

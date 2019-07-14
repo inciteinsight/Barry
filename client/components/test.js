@@ -23,17 +23,22 @@ class Test extends Component {
     await this.props.onLoadHint(hintParam)
   }
 
-  showCurrentPiece = () =>
-    piece.sequence.map(partName => {
+  showCurrentPiece = () => {
+    let {piece} = this.props
+    return piece.sequence.map(partName => {
       let part = piece.parts.find(p => p.name === partName)
       return part
     })
+  }
 
-  handleLineChange = async (newLine, partIndex, lineIndex, completion) => {
+  handleLineChange = async (newLine, partIndex, lineIndex) => {
     let answer = await [...this.state.answer]
     let correct = this.showCurrentPiece()[partIndex].lines[lineIndex]
     answer[partIndex].lines[lineIndex] = newLine
-    answer[partIndex].completion[lineIndex] = completion
+    answer[partIndex].completion[lineIndex] = calculator(
+      simplify(correct),
+      simplify(newLine)
+    )
     await this.setState({
       answer
     })
@@ -160,9 +165,9 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test)
 
-simplify = str => str.replace(/[^\w\s]+/g, '').toLowerCase()
+const simplify = str => str.replace(/[^\w\s]+/g, '').toLowerCase()
 
-levenshteinDistance = (a, b) => {
+const levenshteinDistance = (a, b) => {
   if (a.length == 0) return b.length
   if (b.length == 0) return a.length
 
@@ -192,12 +197,12 @@ levenshteinDistance = (a, b) => {
   return matrix[b.length][a.length]
 }
 
-calculator = (correct, parsed) => {
+const calculator = (correct, newLine) => {
   return String(
     Math.max(
       0,
       Math.round(
-        (correct.length - this.levenshteinDistance(correct, parsed)) /
+        (correct.length - levenshteinDistance(correct, newLine)) /
           correct.length *
           100
       )
