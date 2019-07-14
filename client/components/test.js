@@ -154,8 +154,7 @@ class Test extends Component {
             <Dropdown.Item onClick={() => this.initiateAnswer()}>
               Reset Test
             </Dropdown.Item>
-            {/* <Dropdown.Item disabled>Calculate Result</Dropdown.Item>
-            <Dropdown.Item disabled>Submit</Dropdown.Item> */}
+            <Dropdown.Item disabled>Submit</Dropdown.Item>
           </DropdownButton>
         </div>
         <div className="container d-flex justify-content-center row">
