@@ -31,8 +31,8 @@ class Test extends Component {
     })
   }
 
-  showTotalPercentage = () =>
-    this.state.answer.reduce((sum, part) => {
+  showTotalPercentage = () => {
+    const progressOverall = this.state.answer.reduce((sum, part) => {
       return (
         sum +
         Number(
@@ -42,6 +42,20 @@ class Test extends Component {
         )
       )
     }, 0)
+
+    const maxOverall = this.state.answer.reduce((sum, part) => {
+      return (
+        sum +
+        Number(
+          part.completion.reduce((sum, compInstance) => {
+            return sum + 100
+          }, 0)
+        )
+      )
+    }, 0)
+
+    return (progressOverall / maxOverall * 100).toFixed(2)
+  }
 
   handleLineChange = async (newLine, partIndex, lineIndex) => {
     let answer = await [...this.state.answer]
@@ -119,7 +133,7 @@ class Test extends Component {
     return (
       <div className="d-flex flex-column align-items-center">
         <h4 className="text-center">{piece.name}</h4>
-        <h3>Completed: {this.showTotalPercentage()}</h3>
+        <h3>Completed: {this.showTotalPercentage()}%</h3>
         <div className="d-flex flex-wrap">
           <DropdownButton
             id="dropdown-basic-button"
