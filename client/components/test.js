@@ -23,8 +23,15 @@ class Test extends Component {
     await this.props.onLoadHint(hintParam)
   }
 
+  showCurrentPiece = () =>
+    piece.sequence.map(partName => {
+      let part = piece.parts.find(p => p.name === partName)
+      return part
+    })
+
   handleLineChange = async (newLine, partIndex, lineIndex, completion) => {
     let answer = await [...this.state.answer]
+    let correct = this.showCurrentPiece()[partIndex].lines[lineIndex]
     answer[partIndex].lines[lineIndex] = newLine
     answer[partIndex].completion[lineIndex] = completion
     await this.setState({
@@ -35,10 +42,7 @@ class Test extends Component {
   initiateAnswer = async () => {
     let {piece} = this.props
     if (piece) {
-      let pieceRendered = piece.sequence.map(partName => {
-        let part = piece.parts.find(p => p.name === partName)
-        return part
-      })
+      let pieceRendered = this.showCurrentPiece()
       let answer = pieceRendered.map(partInstance => ({
         name: partInstance.name,
         lines: partInstance.lines.map(() => {
@@ -155,3 +159,48 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test)
+
+simplify = str => str.replace(/[^\w\s]+/g, '').toLowerCase()
+
+levenshteinDistance = (a, b) => {
+  if (a.length == 0) return b.length
+  if (b.length == 0) return a.length
+
+  let matrix = []
+  let i, j
+
+  for (i = 0; i <= b.length; i++) {
+    matrix[i] = [i]
+  }
+
+  for (j = 0; j <= a.length; j++) {
+    matrix[0][j] = j
+  }
+
+  for (i = 1; i <= b.length; i++) {
+    for (j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) == a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1]
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
+        )
+      }
+    }
+  }
+  return matrix[b.length][a.length]
+}
+
+calculator = (correct, parsed) => {
+  return String(
+    Math.max(
+      0,
+      Math.round(
+        (correct.length - this.levenshteinDistance(correct, parsed)) /
+          correct.length *
+          100
+      )
+    )
+  )
+}
