@@ -43,7 +43,13 @@ export default class Line extends Component {
             )
           }}
         >
-          <p>{this.props.completion}%</p>
+          {this.props.completion === '100' ? (
+            <p style={{color: 'white'}}>
+              <strong>Completed</strong>
+            </p>
+          ) : (
+            <p>{this.props.completion}%</p>
+          )}
         </div>
       </div>
     )
