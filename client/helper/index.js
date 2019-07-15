@@ -13,6 +13,28 @@ export const calculator = (correct, newLine) => {
   )
 }
 
+export const rgColorIndicator = (percentage, scheme) => {
+  const max = 255
+  let increment = max / 100
+  switch (scheme) {
+    case 'red-yellow-green':
+      increment *= 2
+      return rgb(
+        Math.min(0, max - increment * percentage),
+        Math.max(0, increment * percentage - max),
+        0
+      )
+    case 'green':
+      return rgb(
+        increment * percentage,
+        percentage < 100 ? 255 : 155,
+        increment * percentage
+      )
+    default:
+      return rgb(0, 255, 0)
+  }
+}
+
 const levenshteinDistance = (a, b) => {
   if (a.length == 0) return b.length
   if (b.length == 0) return a.length
