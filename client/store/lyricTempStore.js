@@ -1,7 +1,8 @@
 export const MidYear2019 = [
   {
     id: 1,
-    name: 'Mid-Year AWS English Processional 2019',
+    name: 'Mid-Year 2019 AWS English Processional',
+    access: 'cni',
     sequence: [
       'stanza1',
       'stanza2',
@@ -104,11 +105,11 @@ export const MidYear2019 = [
   },
   {
     id: 2,
-    name: 'Mid-Year CWS Processional 2019',
+    name: 'Mid-Year 2019 CWS Processional',
+    access: 'cni',
     sequence: [
       'intro',
       'stanza1',
-      'stanza2',
       'refrain',
       'stanza3',
       'stanza4',
@@ -195,7 +196,8 @@ export const MidYear2019 = [
   },
   {
     id: 3,
-    name: 'Mid-Year AWS Spanish Processional 2019',
+    name: 'Mid-Year 2019 AWS Spanish Processional',
+    access: 'cni',
     sequence: [
       'stanza1',
       'stanza2',
