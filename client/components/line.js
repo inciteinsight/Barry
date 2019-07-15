@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import MediaQuery from 'react-responsive'
+import {rgColorIndicator} from '../helper'
 
 export default class Line extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class Line extends Component {
 
   render() {
     return (
-      <div className="form-line-container row align-items-center">
+      <div className="form-line-container row">
         <div className="answer-line mx-1 col">
           <textarea
             rows="2"
@@ -33,7 +34,15 @@ export default class Line extends Component {
             <p>{this.props.hint.parse(this.props.correct)}</p>
           </div>
         </MediaQuery>
-        <div className="result-line mx-1 col text-center">
+        <div
+          className="result-line mx-1 col d-flex align-items-center justify-content-center"
+          style={{
+            'background-color': rgColorIndicator(
+              Number(this.props.completion),
+              'green'
+            )
+          }}
+        >
           <p>{this.props.completion}%</p>
         </div>
       </div>

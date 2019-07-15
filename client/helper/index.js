@@ -19,19 +19,16 @@ export const rgColorIndicator = (percentage, scheme) => {
   switch (scheme) {
     case 'red-yellow-green':
       increment *= 2
-      return rgb(
-        Math.min(0, max - increment * percentage),
-        Math.max(0, increment * percentage - max),
-        0
-      )
+      return `rgb(${Math.min(0, max - increment * percentage)},${Math.max(
+        0,
+        increment * percentage - max
+      )},0)`
     case 'green':
-      return rgb(
-        increment * percentage,
-        percentage < 100 ? 255 : 155,
-        increment * percentage
-      )
+      return `rgb(${percentage === 100 ? 0 : 255 - percentage},255,${
+        percentage === 100 ? 0 : 255 - percentage
+      })`
     default:
-      return rgb(0, 255, 0)
+      return `rgb(0, 255, 0)`
   }
 }
 
