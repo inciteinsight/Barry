@@ -37,8 +37,8 @@ class Test extends Component {
       return (
         sum +
         Number(
-          part.completion.reduce((sum, compInstance) => {
-            return sum + Number(compInstance)
+          part.completion.reduce((innerSum, compInstance) => {
+            return innerSum + Number(compInstance)
           }, 0)
         )
       )
@@ -48,8 +48,8 @@ class Test extends Component {
       return (
         sum +
         Number(
-          part.completion.reduce((sum, compInstance) => {
-            return sum + 100
+          part.completion.reduce(innerSum => {
+            return innerSum + 100
           }, 0)
         )
       )
