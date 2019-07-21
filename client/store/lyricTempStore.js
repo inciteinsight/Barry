@@ -228,7 +228,7 @@ export const MidYear2019 = [
           'Ahora estamos celebrandolo',
           'Te da mos las gracias',
           'Por las bendiciones y exitos',
-          'Que porvienen de Ti',
+          'Que provienen de Ti',
           'Toda prueba y dificultad',
           'Por Tu ayuda pudimos superar'
         ]
