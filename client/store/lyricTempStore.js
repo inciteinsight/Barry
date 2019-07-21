@@ -357,17 +357,6 @@ export const GenericSongsSpeeches = [
       {
         name: 'stanza1',
         lines: [
-          'Great indeed is Your unfailing love',
-          'For us, O Lord God',
-          'You have guided us and we remain',
-          'Your true chosen ones',
-          'And this is a special day',
-          'In your blessed and dear Church of Christ'
-        ]
-      },
-      {
-        name: 'refrain1',
-        lines: [
           'He knows his way in the dark',
           'Mine is the way of the Lord',
           'Those who follow the path of the righteous',
@@ -378,55 +367,50 @@ export const GenericSongsSpeeches = [
         ]
       },
       {
-        name: 'stanza3',
+        name: 'chorus2',
         lines: [
-          'Through fierce persecution, You are there',
-          'Defending Your fold',
-          'In the darkest hours of our distress',
-          'You rescue Your own',
-          'O Lord God, You are so good',
-          'To your Church, where Your grace is bestowed'
+          'Stars',
+          'In your multitudes',
+          'Scarce to be counted',
+          'Filling the darkness',
+          'With order and light',
+          'You are the sentinels',
+          'Silent and sure',
+          'Keeping watch in the night',
+          'Keeping watch in the night'
         ]
       },
       {
-        name: 'stanza4',
+        name: 'stanza2',
         lines: [
-          'Your last mission of salvation grows',
-          'Now spanning the globe',
-          'Many join to praise and worship you',
-          'In reverence Lord',
-          'The true chosen who will reap',
-          'The reward that You have laid instore'
+          'You know your place in the sky',
+          'You hold your course and your aim',
+          'And each in your season',
+          'Returns and returns',
+          'And is always the same',
+          'And if you fall as Lucifer fell',
+          'You fall in flame!'
         ]
       },
       {
-        name: 'stanza5',
+        name: 'bridge',
         lines: [
-          "All our efforts, we'll intensify",
-          'To help spread the truth',
-          'In the work of propagation, Lord',
-          'To always bear fruit',
-          'So that you are greatly pleased',
-          'We will spend all our days serving You'
+          'And so it must be, for so it is written',
+          'On the doorway to paradise',
+          'That those who falter and those who fall',
+          'Must pay the price!'
         ]
       },
       {
-        name: 'stanza6',
+        name: 'finale',
         lines: [
-          'Lord, to Your whole nation, You give heed',
-          'And answer our cries',
-          'That the church administration, Lord',
-          "You'll care for and guide",
-          'So that we will all be led',
-          'To achieve perfect faith in Your sight'
-        ]
-      },
-      {
-        name: 'coda',
-        lines: [
-          'We will not separate from the right',
-          'To worship You, which You bestowed on us',
-          'Amen'
+          'Lord, let me find him',
+          'That I may see him',
+          'Safe behind bars',
+          'I will never rest',
+          "'Til then",
+          'This I swear',
+          'This I swear by the stars!'
         ]
       }
     ]
