@@ -417,8 +417,8 @@ export const GenericSongsSpeeches = [
   },
   {
     id: 2,
-    name: 'Mid-Year 2019 CWS Processional',
-    access: 'cni',
+    name: 'I Dream',
+    access: null,
     sequence: [
       'intro',
       'stanza1',
