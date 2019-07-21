@@ -14,8 +14,8 @@ async function seed() {
     }),
     User.create({
       email: 'inc@inc.com',
-      password: '1914',
-      org: 'cni'
+      password: '1914'
+      // org: 'cni'
     })
   ])
 

@@ -136,17 +136,19 @@ class Test extends Component {
         <h4 className="text-center">{piece.name}</h4>
         <h3>Completed: {this.showTotalPercentage()}%</h3>
         <div className="d-flex flex-wrap">
-          <DropdownButton
-            id="dropdown-basic-button"
-            title="Hint Options"
-            className="mx-3"
-          >
-            {this.state.hintOptions.map(hint => (
-              <Dropdown.Item onClick={() => this.handleHintChange(hint.name)}>
-                {hint.name}
-              </Dropdown.Item>
-            ))}
-          </DropdownButton>
+          <MediaQuery query="(min-device-width: 750px)">
+            <DropdownButton
+              id="dropdown-basic-button"
+              title="Hint Options"
+              className="mx-3"
+            >
+              {this.state.hintOptions.map(hint => (
+                <Dropdown.Item onClick={() => this.handleHintChange(hint.name)}>
+                  {hint.name}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
+          </MediaQuery>
           <DropdownButton
             id="dropdown-basic-button"
             title="Test Options"
