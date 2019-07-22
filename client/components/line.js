@@ -3,12 +3,6 @@ import MediaQuery from 'react-responsive'
 import {rgColorIndicator} from '../helper'
 
 export default class Line extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  async componentDidUpdate(prevProps) {}
-
   handleChange = async event => {
     let {value} = event.target
     await this.props.handleLineChange(
@@ -20,7 +14,7 @@ export default class Line extends Component {
 
   render() {
     return (
-      <div className="form-line-container row">
+      <div className="form-line-container row justify-content-around">
         <div className="answer-line mx-1 col">
           <textarea
             rows="2"
@@ -45,7 +39,6 @@ export default class Line extends Component {
         >
           {this.props.completion === '100' ? (
             <p style={{color: 'white'}}>
-              {/* <i className="fas fa-check-square" style={{color: 'white'}}></i> */}
               <strong>{this.props.completion}%</strong>
             </p>
           ) : (

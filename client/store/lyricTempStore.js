@@ -300,43 +300,9 @@ export const MidYear2019 = [
   }
 ]
 
-export const HintOptions = [
-  {
-    id: 0,
-    name: 'Complete',
-    parse: line => line
-  },
-  {
-    id: 1,
-    name: 'Blind',
-    parse: line => ''
-  },
-  {
-    id: 2,
-    name: 'First Letter',
-    parse: line => line[0]
-  },
-  {
-    id: 3,
-    name: 'First Ten Letters',
-    parse: line => line.slice(0, 9)
-  },
-  {
-    id: 4,
-    name: 'Last Ten Letters',
-    parse: line => line.slice(Math.max(0, line.length - 9), line.length)
-  },
-  {
-    id: 5,
-    name: 'First Letter of each Word',
-    parse: line =>
-      line.replace(/\w[0-9A-Za-z_',!]*/g, sel => sel[0]).toUpperCase()
-  }
-]
-
 export const GenericSongsSpeeches = [
   {
-    id: 1,
+    id: 4,
     name: 'Stars, from Les Miserables',
     access: null,
     sequence: ['chorus1', 'stanza1', 'chorus2', 'stanza2', 'bridge', 'finale'],
@@ -416,7 +382,7 @@ export const GenericSongsSpeeches = [
     ]
   },
   {
-    id: 2,
+    id: 5,
     name: 'I Dream',
     access: null,
     sequence: [
@@ -507,7 +473,7 @@ export const GenericSongsSpeeches = [
     ]
   },
   {
-    id: 3,
+    id: 6,
     name: 'Mid-Year 2019 AWS Spanish Processional',
     access: 'cni',
     sequence: [
@@ -609,5 +575,39 @@ export const GenericSongsSpeeches = [
         ]
       }
     ]
+  }
+]
+
+export const HintOptions = [
+  {
+    id: 0,
+    name: 'Complete',
+    parse: line => line
+  },
+  {
+    id: 1,
+    name: 'Blind',
+    parse: line => ''
+  },
+  {
+    id: 2,
+    name: 'First Letter',
+    parse: line => line[0]
+  },
+  {
+    id: 3,
+    name: 'First Ten Letters',
+    parse: line => line.slice(0, 9)
+  },
+  {
+    id: 4,
+    name: 'Last Ten Letters',
+    parse: line => line.slice(Math.max(0, line.length - 9), line.length)
+  },
+  {
+    id: 5,
+    name: 'First Letter of each Word',
+    parse: line =>
+      line.replace(/\w[0-9A-Za-z_',!]*/g, sel => sel[0]).toUpperCase()
   }
 ]

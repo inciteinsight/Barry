@@ -100,7 +100,7 @@ class Test extends Component {
         <p className="text-center">
           <strong>{part.name}</strong>
         </p>
-        <div className="form-line-container row align-items-center">
+        <div className="form-line-container row justify-content-around">
           <div className="mx-1 col text-center answer-line">
             <h5>Answers</h5>
           </div>
@@ -116,6 +116,7 @@ class Test extends Component {
         </div>
         {part.lines.map((line, lineIndex) => (
           <Line
+            key={`${partIndex}-${line}`}
             correct={line}
             lineIndex={lineIndex}
             partIndex={partIndex}
@@ -143,7 +144,10 @@ class Test extends Component {
               className="mx-3"
             >
               {this.state.hintOptions.map(hint => (
-                <Dropdown.Item onClick={() => this.handleHintChange(hint.name)}>
+                <Dropdown.Item
+                  key={hint.name}
+                  onClick={() => this.handleHintChange(hint.name)}
+                >
                   {hint.name}
                 </Dropdown.Item>
               ))}

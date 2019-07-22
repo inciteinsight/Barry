@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {MidYear2019, HintOptions} from '../store/lyricTempStore'
 import {getPieceThunk, getHintThunk} from '../store/'
-import {ListGroup} from 'react-bootstrap'
-import {Button} from 'react-bootstrap'
+import {ListGroup, Button} from 'react-bootstrap'
+import MediaQuery from 'react-responsive'
 
 class Parameters extends Component {
   constructor() {
@@ -53,7 +53,14 @@ class Parameters extends Component {
         )}
       </ListGroup>
     ) : (
-      <div>Loading</div>
+      <div className="fa-3x">
+        <i className="fas fa-spinner fa-spin" />
+        <i className="fas fa-circle-notch fa-spin" />
+        <i className="fas fa-sync fa-spin" />
+        <i className="fas fa-cog fa-spin" />
+        <i className="fas fa-spinner fa-pulse" />
+        <i className="fas fa-stroopwafel fa-spin" />
+      </div>
     )
   }
 
@@ -87,8 +94,10 @@ class Parameters extends Component {
             </ListGroup>
           </div>
           <div className="m-2">
-            <h5 className="text-center">Hint:</h5>
-            {this.renderHintSelection()}
+            <MediaQuery query="(min-device-width: 750px)">
+              <h5 className="text-center">Hint:</h5>
+              {this.renderHintSelection()}
+            </MediaQuery>
           </div>
         </div>
         <div className="d-flex align-items-center flex-column">

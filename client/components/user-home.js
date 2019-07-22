@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import MediaQuery from 'react-responsive'
 import Parameters from './parameters'
 
 /**
@@ -12,6 +13,14 @@ export const UserHome = props => {
   return (
     <div>
       <h3 className="m-3 text-center">Welcome, {email}</h3>
+      <p className="m-3 text-center">
+        Please select your the song or speech to memorize.
+      </p>
+      <MediaQuery query="(min-device-width: 750px)">
+        <p className="m-3 text-center">
+          Please also select the type of hint. Think of them as guide words.
+        </p>
+      </MediaQuery>
       <hr />
       <Parameters />
     </div>
