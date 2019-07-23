@@ -15,8 +15,17 @@ export default class Line extends Component {
   render() {
     return (
       <div className="form-line-container row justify-content-around">
-        <div className="answer-line mx-1 my-1 col">
+        <div
+          className="answer-line my-1 col"
+          style={{
+            'background-color': rgColorIndicator(
+              Number(this.props.completion),
+              'green'
+            )
+          }}
+        >
           <textarea
+            className="mt-2"
             rows="2"
             name="display"
             value={this.props.answer}
@@ -24,14 +33,28 @@ export default class Line extends Component {
           />
         </div>
         <MediaQuery query="(min-device-width: 750px)">
-          <div className="hint-line mx-1 my-1 col">
-            <p className="text-center">
-              {this.props.hint.parse(this.props.correct)}
-            </p>
+          <div
+            className="hint-line my-1 col"
+            style={{
+              'background-color': rgColorIndicator(
+                Number(this.props.completion),
+                'green'
+              )
+            }}
+          >
+            {this.props.completion === '100' ? (
+              <p style={{color: 'white'}} className="text-center mt-2">
+                <strong>{this.props.hint.parse(this.props.correct)}</strong>
+              </p>
+            ) : (
+              <p className="text-center mt-2">
+                {this.props.hint.parse(this.props.correct)}
+              </p>
+            )}
           </div>
         </MediaQuery>
         <div
-          className="result-line mx-1 my-1 col d-flex align-items-center justify-content-center"
+          className="result-line my-1 col d-flex align-items-center justify-content-center"
           style={{
             'background-color': rgColorIndicator(
               Number(this.props.completion),
