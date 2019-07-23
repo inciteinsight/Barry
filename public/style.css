@@ -25,9 +25,14 @@ form div {
 }
 
 .hint-line {
-  min-width: 180px;
+  min-width: 150px;
 }
 
 .answer-line {
-  min-width: 180px;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.result-line {
+  z-index: -1;
 }
