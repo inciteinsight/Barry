@@ -101,15 +101,15 @@ class Test extends Component {
           <strong>{part.name}</strong>
         </p>
         <div className="form-line-container row justify-content-around">
-          <div className="mx-1 col text-center answer-line">
+          <div className="mx-1 my-1 col text-center answer-line">
             <h5>Answers</h5>
           </div>
           <MediaQuery query="(min-device-width: 750px)">
-            <div className="mx-1 col text-center hint-line">
+            <div className="mx-1 my-1 col text-center hint-line">
               <h5>Hints</h5>
             </div>
           </MediaQuery>
-          <div className="mx-1 col text-center result-line">
+          <div className="mx-1 my-1 col text-center result-line">
             <h5>Results</h5>
           </div>
           <div className="w-100" />
