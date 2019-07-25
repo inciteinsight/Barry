@@ -1,6 +1,200 @@
 export const MidYear2019 = [
   {
     id: 1,
+    name: 'Defying Gravity, Glee rendition',
+    access: null,
+    sequence: ['stanza1', 'chorus1', 'stanza2', 'chorus2', 'chorus2', 'finale'],
+    parts: [
+      {
+        name: 'stanza1',
+        lines: [
+          'Something has changed within me, something is not the same',
+          "I'm through with playing by the rules of someone else's game",
+          'Too late for second-guessing, too late to go back to sleep',
+          "It's time to trust my instincts, close my eyes, and leap"
+        ]
+      },
+      {
+        name: 'chorus1',
+        lines: [
+          "It's time to try defying gravity",
+          "I think I'll try defying gravity",
+          "Kiss me goodbye, I'm defying gravity",
+          "And you won't bring me down"
+        ]
+      },
+      {
+        name: 'stanza2',
+        lines: [
+          "I'm through accepting limits 'cause someone says they're so",
+          "Some things I cannot change, but 'til I try, I'll never know",
+          "Too long I've been afraid of Losing love, I guess I've lost",
+          "Well, if that's love, it comes at much too high a cost"
+        ]
+      },
+      {
+        name: 'chorus2',
+        lines: [
+          "I'd sooner buy defying gravity",
+          "Kiss me goodbye, I'm defying gravity",
+          "I think I'll try defying gravity",
+          "And you won't bring me down"
+        ]
+      },
+      {
+        name: 'finale',
+        lines: ['Bring me down', 'Ohhh']
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'I Dreamed a Dream, from Les Miserables',
+    access: null,
+    sequence: ['intro', 'stanza1', 'bridge1', 'stanza2', 'finale'],
+    parts: [
+      {
+        name: 'intro',
+        lines: [
+          'There was a time when men were kind',
+          'When their voices were soft',
+          'And their words inviting',
+          'There was a time when love was blind',
+          'And the world was a song',
+          'And the song was exciting',
+          'There was a time',
+          'Then it all went wrong'
+        ]
+      },
+      {
+        name: 'stanza1',
+        lines: [
+          'I dreamed a dream of time gone by',
+          'When hope was high and life worth living',
+          'I dreamed, that love would never die',
+          'I dreamed that God would be forgiving',
+          'Then I was young and unafraid',
+          'And dreams were made and used and wasted',
+          'There was no ransom to be paid',
+          'No song unsung, no wine untasted'
+        ]
+      },
+      {
+        name: 'bridge1',
+        lines: [
+          'But the tigers come at night',
+          'With their voices soft as thunder',
+          'As they tear your hope apart',
+          'As they turn your dream to shame'
+        ]
+      },
+      {
+        name: 'stanza2',
+        lines: [
+          'He slept a summer by my side',
+          'He filled my days with endless wonder',
+          'He took my childhood in his stride',
+          'But he was gone when autumn came',
+          "And still I dream he'll come to me",
+          'That we will live the years together',
+          'But there are dreams that cannot be',
+          'And there are storms we cannot weather'
+        ]
+      },
+      {
+        name: 'finale',
+        lines: [
+          'I had a dream my life would be',
+          "So different from this hell I'm living",
+          'So different now from what it seemed',
+          'Now life has killed the dream',
+          'I dreamed'
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: 'Stars, from Les Miserables',
+    access: null,
+    sequence: ['chorus1', 'stanza1', 'chorus2', 'stanza2', 'bridge', 'finale'],
+    parts: [
+      {
+        name: 'chorus1',
+        lines: [
+          'There, out in the darkness',
+          'A fugitive running',
+          'Fallen from God',
+          'Fallen from grace',
+          'God be my witness',
+          'I never shall yield',
+          'Til we come face to face',
+          'Til we come face to face'
+        ]
+      },
+      {
+        name: 'stanza1',
+        lines: [
+          'He knows his way in the dark',
+          'Mine is the way of the Lord',
+          'Those who follow the path of the righteous',
+          'Shall have their reward',
+          'And if they fall as Lucifer fell',
+          'The flames',
+          'The sword!'
+        ]
+      },
+      {
+        name: 'chorus2',
+        lines: [
+          'Stars',
+          'In your multitudes',
+          'Scarce to be counted',
+          'Filling the darkness',
+          'With order and light',
+          'You are the sentinels',
+          'Silent and sure',
+          'Keeping watch in the night',
+          'Keeping watch in the night'
+        ]
+      },
+      {
+        name: 'stanza2',
+        lines: [
+          'You know your place in the sky',
+          'You hold your course and your aim',
+          'And each in your season',
+          'Returns and returns',
+          'And is always the same',
+          'And if you fall as Lucifer fell',
+          'You fall in flame!'
+        ]
+      },
+      {
+        name: 'bridge',
+        lines: [
+          'And so it must be, for so it is written',
+          'On the doorway to paradise',
+          'That those who falter and those who fall',
+          'Must pay the price!'
+        ]
+      },
+      {
+        name: 'finale',
+        lines: [
+          'Lord, let me find him',
+          'That I may see him',
+          'Safe behind bars',
+          'I will never rest',
+          "'Til then",
+          'This I swear',
+          'This I swear by the stars!'
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
     name: 'Mid-Year 2019 AWS English Processional',
     access: 'YearMid9102',
     sequence: [
@@ -104,7 +298,7 @@ export const MidYear2019 = [
     ]
   },
   {
-    id: 2,
+    id: 5,
     name: 'Mid-Year 2019 CWS Processional',
     access: 'YearMid9102',
     sequence: [
@@ -195,7 +389,7 @@ export const MidYear2019 = [
     ]
   },
   {
-    id: 3,
+    id: 6,
     name: 'Mid-Year 2019 AWS Spanish Processional',
     access: 'YearMid9102',
     sequence: [
@@ -295,203 +489,6 @@ export const MidYear2019 = [
           'Del derecho que nos diste, nuestro Dios',
           'Amen'
         ]
-      }
-    ]
-  }
-]
-
-export const GenericSongsSpeeches = [
-  {
-    id: 4,
-    name: 'Stars, from Les Miserables',
-    access: null,
-    sequence: ['chorus1', 'stanza1', 'chorus2', 'stanza2', 'bridge', 'finale'],
-    parts: [
-      {
-        name: 'chorus1',
-        lines: [
-          'There, out in the darkness',
-          'A fugitive running',
-          'Fallen from God',
-          'Fallen from grace',
-          'God be my witness',
-          'I never shall yield',
-          'Til we come face to face',
-          'Til we come face to face'
-        ]
-      },
-      {
-        name: 'stanza1',
-        lines: [
-          'He knows his way in the dark',
-          'Mine is the way of the Lord',
-          'Those who follow the path of the righteous',
-          'Shall have their reward',
-          'And if they fall as Lucifer fell',
-          'The flames',
-          'The sword!'
-        ]
-      },
-      {
-        name: 'chorus2',
-        lines: [
-          'Stars',
-          'In your multitudes',
-          'Scarce to be counted',
-          'Filling the darkness',
-          'With order and light',
-          'You are the sentinels',
-          'Silent and sure',
-          'Keeping watch in the night',
-          'Keeping watch in the night'
-        ]
-      },
-      {
-        name: 'stanza2',
-        lines: [
-          'You know your place in the sky',
-          'You hold your course and your aim',
-          'And each in your season',
-          'Returns and returns',
-          'And is always the same',
-          'And if you fall as Lucifer fell',
-          'You fall in flame!'
-        ]
-      },
-      {
-        name: 'bridge',
-        lines: [
-          'And so it must be, for so it is written',
-          'On the doorway to paradise',
-          'That those who falter and those who fall',
-          'Must pay the price!'
-        ]
-      },
-      {
-        name: 'finale',
-        lines: [
-          'Lord, let me find him',
-          'That I may see him',
-          'Safe behind bars',
-          'I will never rest',
-          "'Til then",
-          'This I swear',
-          'This I swear by the stars!'
-        ]
-      }
-    ]
-  },
-  {
-    id: 5,
-    name: 'I Dreamed a Dream, from Les Miserables',
-    access: null,
-    sequence: ['intro', 'stanza1', 'bridge1', 'stanza2', 'finale'],
-    parts: [
-      {
-        name: 'intro',
-        lines: [
-          'There was a time when men were kind',
-          'When their voices were soft',
-          'And their words inviting',
-          'There was a time when love was blind',
-          'And the world was a song',
-          'And the song was exciting',
-          'There was a time',
-          'Then it all went wrong'
-        ]
-      },
-      {
-        name: 'stanza1',
-        lines: [
-          'I dreamed a dream of time gone by',
-          'When hope was high and life worth living',
-          'I dreamed, that love would never die',
-          'I dreamed that God would be forgiving',
-          'Then I was young and unafraid',
-          'And dreams were made and used and wasted',
-          'There was no ransom to be paid',
-          'No song unsung, no wine untasted'
-        ]
-      },
-      {
-        name: 'bridge1',
-        lines: [
-          'But the tigers come at night',
-          'With their voices soft as thunder',
-          'As they tear your hope apart',
-          'As they turn your dream to shame'
-        ]
-      },
-      {
-        name: 'stanza2',
-        lines: [
-          'He slept a summer by my side',
-          'He filled my days with endless wonder',
-          'He took my childhood in his stride',
-          'But he was gone when autumn came',
-          "And still I dream he'll come to me",
-          'That we will live the years together',
-          'But there are dreams that cannot be',
-          'And there are storms we cannot weather'
-        ]
-      },
-      {
-        name: 'finale',
-        lines: [
-          'I had a dream my life would be',
-          "So different from this hell I'm living",
-          'So different now from what it seemed',
-          'Now life has killed the dream',
-          'I dreamed'
-        ]
-      }
-    ]
-  },
-  {
-    id: 6,
-    name: 'Defying Gravity, Glee rendition',
-    access: null,
-    sequence: ['stanza1', 'chorus1', 'stanza2', 'chorus2', 'chorus2', 'finale'],
-    parts: [
-      {
-        name: 'stanza1',
-        lines: [
-          'Something has changed within me, something is not the same',
-          "I'm through with playing by the rules of someone else's game",
-          'Too late for second-guessing, too late to go back to sleep',
-          "It's time to trust my instincts, close my eyes, and leap"
-        ]
-      },
-      {
-        name: 'chorus1',
-        lines: [
-          "It's time to try defying gravity",
-          "I think I'll try defying gravity",
-          "Kiss me goodbye, I'm defying gravity",
-          "And you won't bring me down"
-        ]
-      },
-      {
-        name: 'stanza2',
-        lines: [
-          "I'm through accepting limits 'cause someone says they're so",
-          "Some things I cannot change, but 'til I try, I'll never know",
-          "Too long I've been afraid of Losing love, I guess I've lost",
-          "Well, if that's love, it comes at much too high a cost"
-        ]
-      },
-      {
-        name: 'chorus2',
-        lines: [
-          "I'd sooner buy defying gravity",
-          "Kiss me goodbye, I'm defying gravity",
-          "I think I'll try defying gravity",
-          "And you won't bring me down"
-        ]
-      },
-      {
-        name: 'finale',
-        lines: ['Bring me down', 'Ohhh']
       }
     ]
   }
