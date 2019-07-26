@@ -18,6 +18,7 @@ class Parameters extends Component {
   async componentDidMount() {
     await this.props.onLoadPiece(this.state.pieceParam)
     await this.props.onLoadHint(this.state.hintParam)
+    console.log(this.props.user)
   }
 
   handleChange = async (pieceParam = null, hintParam = null) => {
@@ -26,6 +27,52 @@ class Parameters extends Component {
     } else {
       await this.props.onLoadPiece(pieceParam)
     }
+  }
+
+  validPieces = () => {
+    let {access} = this.props.user
+    if (!access) {
+      access = [null]
+    }
+    const pieces = MidYear2019
+    return pieces.filter(piece => this.validatePiece(piece, access))
+  }
+
+  validatePiece = (piece, access) => {
+    access.push(null)
+    return access.reduce((result, accessKey) => {
+      if (accessKey === piece.access) {
+        result = true
+      }
+      return result
+    }, false)
+  }
+
+  renderPieceSelection() {
+    return (
+      <ListGroup defaultActiveKey="#linkp0">
+        {this.validPieces().map(
+          (piece, i) =>
+            i === 0 ? (
+              <ListGroup.Item
+                action
+                href="#linkp0"
+                onClick={() => this.handleChange(piece.name, null)}
+              >
+                {piece.name}
+              </ListGroup.Item>
+            ) : (
+              <ListGroup.Item
+                action
+                href={`#linkp${i}`}
+                onClick={() => this.handleChange(piece.name, null)}
+              >
+                {piece.name}
+              </ListGroup.Item>
+            )
+        )}
+      </ListGroup>
+    )
   }
 
   renderHintSelection() {
@@ -53,14 +100,7 @@ class Parameters extends Component {
         )}
       </ListGroup>
     ) : (
-      <div className="fa-3x">
-        <i className="fas fa-spinner fa-spin" />
-        <i className="fas fa-circle-notch fa-spin" />
-        <i className="fas fa-sync fa-spin" />
-        <i className="fas fa-cog fa-spin" />
-        <i className="fas fa-spinner fa-pulse" />
-        <i className="fas fa-stroopwafel fa-spin" />
-      </div>
+      <div> Loading ... </div>
     )
   }
 
@@ -70,28 +110,7 @@ class Parameters extends Component {
         <div className="d-flex justify-content-center flex-wrap">
           <div className="m-2">
             <h5 className="text-center">Piece:</h5>
-            <ListGroup defaultActiveKey="#linkp0">
-              {MidYear2019.map(
-                (piece, i) =>
-                  i === 0 ? (
-                    <ListGroup.Item
-                      action
-                      href="#linkp0"
-                      onClick={() => this.handleChange(piece.name, null)}
-                    >
-                      {piece.name}
-                    </ListGroup.Item>
-                  ) : (
-                    <ListGroup.Item
-                      action
-                      href={`#linkp${i}`}
-                      onClick={() => this.handleChange(piece.name, null)}
-                    >
-                      {piece.name}
-                    </ListGroup.Item>
-                  )
-              )}
-            </ListGroup>
+            {this.renderPieceSelection()}
           </div>
           <div className="m-2">
             <MediaQuery query="(min-device-width: 750px)">
@@ -119,7 +138,8 @@ class Parameters extends Component {
 
 const mapStateToProps = state => ({
   piece: state.piece.selectedPiece,
-  hint: state.piece.selectedHint
+  hint: state.piece.selectedHint,
+  user: state.user
 })
 
 const mapDispatchToProps = dispatch => ({

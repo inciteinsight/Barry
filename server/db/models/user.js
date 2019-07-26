@@ -17,7 +17,7 @@ const User = db.define('user', {
     }
   },
   access: {
-    type: Sequelize.STRING
+    type: Sequelize.ARRAY(Sequelize.TEXT)
   },
   salt: {
     type: Sequelize.STRING,
