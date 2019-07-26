@@ -1,4 +1,4 @@
-export const MidYear2019 = [
+export const SongBook = [
   {
     id: 1,
     name: 'Defying Gravity, Glee rendition',

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {MidYear2019, HintOptions} from '../store/lyricTempStore'
+import {SongBook, HintOptions} from '../store/lyricTempStore'
 import {getPieceThunk, getHintThunk} from '../store/'
 import {ListGroup, Button} from 'react-bootstrap'
 import MediaQuery from 'react-responsive'
@@ -10,7 +10,7 @@ class Parameters extends Component {
   constructor() {
     super()
     this.state = {
-      pieceParam: MidYear2019[0].name,
+      pieceParam: SongBook[0].name,
       hintParam: HintOptions[0].name
     }
   }
@@ -34,7 +34,7 @@ class Parameters extends Component {
     if (!access) {
       access = [null]
     }
-    const pieces = MidYear2019
+    const pieces = SongBook
     return pieces.filter(piece => this.validatePiece(piece, access))
   }
 

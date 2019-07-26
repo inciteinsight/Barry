@@ -1,7 +1,7 @@
-import {MidYear2019, HintOptions} from './lyricTempStore'
+import {SongBook, HintOptions} from './lyricTempStore'
 
 const initialState = {
-  selectedPiece: MidYear2019[0],
+  selectedPiece: SongBook[0],
   selectedHint: HintOptions[0],
   answer: {}
 }
@@ -21,7 +21,7 @@ const getHint = selectedHint => ({
 
 export const getPieceThunk = pieceName => async dispatch => {
   try {
-    const data = await MidYear2019.find(piece => piece.name === pieceName)
+    const data = await SongBook.find(piece => piece.name === pieceName)
     dispatch(getPiece(data))
   } catch (error) {
     console.error(error)
