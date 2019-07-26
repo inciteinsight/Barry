@@ -18,7 +18,6 @@ class Parameters extends Component {
   async componentDidMount() {
     await this.props.onLoadPiece(this.state.pieceParam)
     await this.props.onLoadHint(this.state.hintParam)
-    console.log(this.props.user)
   }
 
   handleChange = async (pieceParam = null, hintParam = null) => {
