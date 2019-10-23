@@ -33,8 +33,8 @@ class Parameters extends Component {
     if (!access) {
       access = [null]
     }
-    const pieces = SongBook
-    return pieces.filter(piece => this.validatePiece(piece, access))
+    const valid = SongBook.filter(piece => this.validatePiece(piece, access))
+    return valid
   }
 
   validatePiece = (piece, access) => {
