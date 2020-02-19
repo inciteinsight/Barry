@@ -84,6 +84,9 @@ class Test extends Component {
           return 0
         })
       }))
+      Array.from(document.getElementsByClassName('testform')).forEach(f =>
+        f.reset()
+      )
       await this.setState({
         answer
       })
@@ -96,11 +99,11 @@ class Test extends Component {
     )
     const {answer} = this.state
     return (
-      <div>
+      <form className="testform">
         <p className="text-center">
           <strong>{part.name}</strong>
         </p>
-        <div className="form-line-container row justify-content-around">
+        <div className="form-line-container row justify-content-around form-group">
           <div className="my-1 col text-center answer-line">
             <h5>Answers</h5>
           </div>
@@ -126,7 +129,7 @@ class Test extends Component {
             handleLineChange={this.handleLineChange}
           />
         ))}
-      </div>
+      </form>
     )
   }
 
@@ -158,7 +161,11 @@ class Test extends Component {
             title="Test Options"
             className="mx-3"
           >
-            <Dropdown.Item onClick={() => this.initiateAnswer()}>
+            <Dropdown.Item
+              onClick={() => {
+                this.initiateAnswer()
+              }}
+            >
               Reset Test
             </Dropdown.Item>
             <Dropdown.Item disabled>Submit</Dropdown.Item>

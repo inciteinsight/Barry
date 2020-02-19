@@ -45,6 +45,7 @@ export const resetAnswerThunk = selectedPiece => async dispatch => {
         line = ''
       })
     })
+    console.log('called')
   } catch (error) {
     console.error(error)
   }

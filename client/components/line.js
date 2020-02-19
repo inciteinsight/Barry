@@ -14,7 +14,7 @@ export default class Line extends Component {
 
   render() {
     return (
-      <div className="form-line-container row justify-content-around">
+      <div className="form-line-container row justify-content-around form-group">
         <div
           className="answer-line my-1 col"
           style={{
@@ -25,7 +25,7 @@ export default class Line extends Component {
           }}
         >
           <textarea
-            className="mt-2"
+            className="mt-2 form-control"
             rows="2"
             name="display"
             // value={this.state.currentValue}
