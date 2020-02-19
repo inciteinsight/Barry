@@ -28,7 +28,7 @@ export default class Line extends Component {
             className="mt-2"
             rows="2"
             name="display"
-            value={this.props.answer}
+            // value={this.state.currentValue}
             onChange={this.handleChange}
           />
         </div>
