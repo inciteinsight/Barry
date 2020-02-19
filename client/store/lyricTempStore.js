@@ -621,93 +621,101 @@ export const SongBook = [
     ],
     parts: [
       {
-        name: 'intro',
+        name: '1-stanza1',
         lines: [
-          'O my Lord, I have a duty most divine',
-          'For You have called and chosen me',
-          'Before You, as Your servant, I draw near',
-          'To serve You, my Lord God, so earnestly'
+          'Oh this is the day of our Holy Supper',
+          'Judgment in the Church of Christ',
+          'May we all prepare ourselves with devotion',
+          'And let us earnestly renew our lives'
         ]
       },
       {
-        name: 'stanza1',
+        name: '1-stanza2',
         lines: [
-          'I offer my thanksgiving, to You, Father',
-          'For all your goodness poured abundantly',
-          'You grant me constant care within Your keeping',
-          'And, from all dangers, You deliver me'
+          'There are some who were with us in the true fold',
+          'But lost faith and fell away',
+          'They regarded lightly the Holy Supper',
+          'That is why they were judged and cast away'
         ]
       },
       {
-        name: 'stanza2',
+        name: '1-refrain1',
         lines: [
-          'So, I draw near with reverence before you',
-          'I praise and worship You devotedly',
-          'You grant me constant care within your keeping',
-          'In worship service, it is You I seek'
+          'Oh with all our hearts and souls draw closer',
+          'To Christ Jesus most fervently',
+          'And let us in supplication make known to him',
+          'He is truly the One we need'
         ]
       },
       {
-        name: 'refrain1',
+        name: '1-stanza3',
         lines: [
-          'I now implore You, accept, O Father',
-          'The thanks I offer form my very soul',
-          'May I receive Your abiding favor',
-          'And Your lowly one, deem worthy, my Lord'
+          'We were overcome and blinded by weakness',
+          "And we've sinned so many times",
+          'So approach the throne of grace our Lord Jesus',
+          'And of our sins repent with hearts contrite'
         ]
       },
       {
-        name: 'stanza3',
+        name: '1-stanza4',
         lines: [
-          'Though people on this Earth lament their hardships',
-          'You still uphold and bless me every day',
-          'And it is clear that You did not forsake me',
-          'I still receive from You such boundless grace'
+          'May we all remain in our precious calling',
+          'Ever steadfast in the Church',
+          'And if we indeed remain we will all reach',
+          'The Holy City free from pain and woe'
         ]
       },
       {
-        name: 'stanza4',
+        name: '1-refrain2',
         lines: [
-          "Because of all life's sufferings and trials",
-          'I felt at times so close to losing hope',
-          'But I am thankful that I have Your guidance',
-          'From which I gain the courage to go on'
+          'Oh our blessed and most loving Father',
+          'We are gathered before You now',
+          'We await Your tender mercy Your boundless grace',
+          'And the care You alone bestow'
         ]
       },
       {
-        name: 'refrain2',
+        name: '2-stanza1',
         lines: [
-          'Thank You, O Father; Thank You, O Father',
-          'I thank You, Father dear, with all my heart',
-          'And for the sins that I have committed,',
-          'Cover them with Your forgiveness, my God'
+          'Almighty Father please draw near to me',
+          'The power of Your presence let me feel',
+          'For here I am Your lowly servant Lord',
+          'Waiting for your help in this Holy Supper'
         ]
       },
       {
-        name: 'stanza5',
+        name: '2-refrain1',
         lines: [
-          "I won't stop thanking You, for You still love me",
-          'You did not leave me nor turn me away',
-          'For You allow me to remain in Your Church',
-          'And I still have the duty which You gave'
+          'It is not my desire to do wrong',
+          'But I faltered deceived by this world',
+          'Overcome by wickedness surrounding me',
+          'Forgive me please Lord God do not withhold Your love'
         ]
       },
       {
-        name: 'stanza6',
+        name: '2-stanza2',
         lines: [
-          "I know I don't deserve the love You show me",
-          'Because of all my sins and my mistakes',
-          'But, with compassion, You are slow to anger',
-          'That Your forgiveness I may still obtain'
+          'My true desire then is to serve You Lord',
+          'And be found blameless in obeying You',
+          "But I know I won't be able to endure",
+          'And so I need You evermore in my life'
+        ]
+      },
+      {
+        name: '2-refrain2',
+        lines: [
+          'If I am scorned and persecuted',
+          "I can still bear this world's rejection",
+          "But I know I won't be able to endure",
+          'If I would ever be abandoned Lord by You'
         ]
       },
       {
         name: 'coda',
         lines: [
-          'Once more, watch over Your humble servant',
-          'For my long journey I must yet endure',
-          'To carry on till I reach my true home',
-          'In the promised Holy City with You'
+          'May I then remain until the very end',
+          'Your loyal chosen one til I am laid to rest',
+          'Amen'
         ]
       }
     ]
