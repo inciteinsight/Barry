@@ -601,6 +601,116 @@ export const SongBook = [
         ]
       }
     ]
+  },
+  {
+    id: 8,
+    name: 'Holy Supper 2020 AWS English Processional',
+    access: 'YearMid9102',
+    sequence: [
+      '1-stanza1',
+      '1-stanza2',
+      '1-refrain1',
+      '1-stanza3',
+      '1-stanza4',
+      '1-refrain2',
+      '2-stanza1',
+      '2-refrain1',
+      '2-stanza2',
+      '2-refrain2',
+      'coda'
+    ],
+    parts: [
+      {
+        name: 'intro',
+        lines: [
+          'O my Lord, I have a duty most divine',
+          'For You have called and chosen me',
+          'Before You, as Your servant, I draw near',
+          'To serve You, my Lord God, so earnestly'
+        ]
+      },
+      {
+        name: 'stanza1',
+        lines: [
+          'I offer my thanksgiving, to You, Father',
+          'For all your goodness poured abundantly',
+          'You grant me constant care within Your keeping',
+          'And, from all dangers, You deliver me'
+        ]
+      },
+      {
+        name: 'stanza2',
+        lines: [
+          'So, I draw near with reverence before you',
+          'I praise and worship You devotedly',
+          'You grant me constant care within your keeping',
+          'In worship service, it is You I seek'
+        ]
+      },
+      {
+        name: 'refrain1',
+        lines: [
+          'I now implore You, accept, O Father',
+          'The thanks I offer form my very soul',
+          'May I receive Your abiding favor',
+          'And Your lowly one, deem worthy, my Lord'
+        ]
+      },
+      {
+        name: 'stanza3',
+        lines: [
+          'Though people on this Earth lament their hardships',
+          'You still uphold and bless me every day',
+          'And it is clear that You did not forsake me',
+          'I still receive from You such boundless grace'
+        ]
+      },
+      {
+        name: 'stanza4',
+        lines: [
+          "Because of all life's sufferings and trials",
+          'I felt at times so close to losing hope',
+          'But I am thankful that I have Your guidance',
+          'From which I gain the courage to go on'
+        ]
+      },
+      {
+        name: 'refrain2',
+        lines: [
+          'Thank You, O Father; Thank You, O Father',
+          'I thank You, Father dear, with all my heart',
+          'And for the sins that I have committed,',
+          'Cover them with Your forgiveness, my God'
+        ]
+      },
+      {
+        name: 'stanza5',
+        lines: [
+          "I won't stop thanking You, for You still love me",
+          'You did not leave me nor turn me away',
+          'For You allow me to remain in Your Church',
+          'And I still have the duty which You gave'
+        ]
+      },
+      {
+        name: 'stanza6',
+        lines: [
+          "I know I don't deserve the love You show me",
+          'Because of all my sins and my mistakes',
+          'But, with compassion, You are slow to anger',
+          'That Your forgiveness I may still obtain'
+        ]
+      },
+      {
+        name: 'coda',
+        lines: [
+          'Once more, watch over Your humble servant',
+          'For my long journey I must yet endure',
+          'To carry on till I reach my true home',
+          'In the promised Holy City with You'
+        ]
+      }
+    ]
   }
 ]
 
