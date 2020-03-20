@@ -1,18 +1,5 @@
 export const simplify = str => str.replace(/[^\w\s]+/g, '').toLowerCase()
 
-export const calculator = (correct, newLine) => {
-  return String(
-    Math.max(
-      0,
-      Math.round(
-        (correct.length - levenshteinDistance(correct, newLine)) /
-          correct.length *
-          100
-      )
-    )
-  )
-}
-
 export const rgColorIndicator = (percentage, scheme) => {
   const max = 255
   let increment = max / 100
@@ -60,4 +47,17 @@ const levenshteinDistance = (a, b) => {
     }
   }
   return matrix[b.length][a.length]
+}
+
+export const calculator = (correct, newLine) => {
+  return String(
+    Math.max(
+      0,
+      Math.round(
+        (correct.length - levenshteinDistance(correct, newLine)) /
+          correct.length *
+          100
+      )
+    )
+  )
 }

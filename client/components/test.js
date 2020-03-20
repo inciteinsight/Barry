@@ -5,6 +5,7 @@ import {DropdownButton, Dropdown} from 'react-bootstrap'
 import {getHintThunk} from '../store'
 import {HintOptions} from '../store/lyricTempStore'
 import {simplify, calculator} from '../helper/'
+import alertify from 'alertifyjs'
 import Line from './line'
 
 class Test extends Component {
@@ -30,6 +31,12 @@ class Test extends Component {
       let part = piece.parts.find(p => p.name === partName)
       return part
     })
+  }
+
+  handleSubmit = e => {
+    // functionality redacted to protect client email
+    e.preventDefault()
+    alertify.success('Test Submitted!')
   }
 
   showTotalPercentage = () => {
@@ -168,7 +175,7 @@ class Test extends Component {
             >
               Reset Test
             </Dropdown.Item>
-            <Dropdown.Item disabled>Submit</Dropdown.Item>
+            <Dropdown.Item onClick={this.handleSubmit}>Submit</Dropdown.Item>
           </DropdownButton>
         </div>
         <div className="container d-flex justify-content-center row">
