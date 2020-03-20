@@ -33,10 +33,14 @@ class Test extends Component {
     })
   }
 
-  handleSubmit = e => {
-    // functionality redacted to protect client email
-    e.preventDefault()
-    alertify.success('Test Submitted!')
+  handleSubmit = () => {
+    try {
+      this.initiateAnswer()
+      // Actual functionality redacted for client privacy
+      alertify.success('Test Submitted!')
+    } catch (error) {
+      alertify.error('Error in submission')
+    }
   }
 
   showTotalPercentage = () => {
