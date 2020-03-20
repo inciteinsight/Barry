@@ -2,6 +2,10 @@ body {
   font-family: sans-serif;
 }
 
+.background {
+  background-color: #c0ffee;
+}
+
 a {
   text-decoration: none;
 }

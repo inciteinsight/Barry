@@ -7,7 +7,10 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
+    <div className="d-flex flex-column justify-content-center align-items-center">
+      <div>
+        <h3>Please log in to take the music exam</h3>
+      </div>
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="email">
