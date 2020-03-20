@@ -28,7 +28,6 @@ export default class Line extends Component {
             className="mt-2 form-control"
             rows="2"
             name="display"
-            // value={this.state.currentValue}
             onChange={this.handleChange}
           />
         </div>
