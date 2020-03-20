@@ -14,16 +14,16 @@ export default class Line extends Component {
 
   render() {
     return (
-      <div className="form-line-container row justify-content-around form-group">
-        <div
-          className="answer-line my-1 col"
-          style={{
-            'background-color': rgColorIndicator(
-              Number(this.props.completion),
-              'green'
-            )
-          }}
-        >
+      <div
+        className="form-line-container row justify-content-around form-group"
+        style={{
+          'background-color': rgColorIndicator(
+            Number(this.props.completion),
+            'green'
+          )
+        }}
+      >
+        <div className="answer-line my-1 col">
           <textarea
             className="mt-2 form-control"
             rows="2"
@@ -32,15 +32,7 @@ export default class Line extends Component {
           />
         </div>
         <MediaQuery query="(min-device-width: 750px)">
-          <div
-            className="hint-line my-1 col"
-            style={{
-              'background-color': rgColorIndicator(
-                Number(this.props.completion),
-                'green'
-              )
-            }}
-          >
+          <div className="hint-line my-1 col">
             {this.props.completion === '100' ? (
               <p style={{color: 'white'}} className="text-center mt-2">
                 <strong>{this.props.hint.parse(this.props.correct)}</strong>
@@ -52,15 +44,7 @@ export default class Line extends Component {
             )}
           </div>
         </MediaQuery>
-        <div
-          className="result-line my-1 col d-flex align-items-center justify-content-center"
-          style={{
-            'background-color': rgColorIndicator(
-              Number(this.props.completion),
-              'green'
-            )
-          }}
-        >
+        <div className="my-1 col d-flex align-items-center justify-content-center">
           {this.props.completion === '100' ? (
             <p style={{color: 'white'}}>
               <strong>{this.props.completion}%</strong>

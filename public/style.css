@@ -45,7 +45,3 @@ form div {
   min-width: 210px;
   z-index: 1;
 }
-
-.result-line {
-  z-index: -1;
-}
